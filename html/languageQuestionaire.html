@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 30%;
+        background-color: #4ca6ff;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+
+        input[type=submit]:hover {
+            background-color: #3333ff;
+        }
+
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+
+    input:checked {
+        height: 25px;
+        width: 25px;
+    }
+</style>
+<body>
+
+    <div>
+        <font size="5">
+            <h2>Language History Questionaire:</h2><br>
+        </font>
+        <font face="times new roman" size="4">
+
+            <form action="action_page.php">
+
+                <label for="age">3. Education: (degree obtained or school level attended):</label>
+                <input type="text" id="age" name="Age" required="true">
+                <br>
+
+                <label for="age">4(a). Country of Origin:</label>
+                <input type="text" id="age" name="Age" required="true">
+                <br>
+
+                <label for="age">4(b). Country of Residence:</label>
+                <input type="text" id="age" name="Age" required="true">
+                <br>
+
+                <label for="age">5. How long have you liven in a foreign country where your second language is spoken?</label>
+                <input type="text" id="age" name="Age" required="true">
+                <br>
+
+                <label for="age">5. How long have you lived in the country of your current residence?</label>
+                <input type="text" id="age" name="Age" required="true">
+                <br>
+
+                <label for="age">6. What is your native language? (if you grew up with more than one language, please specify)</label>
+                <input type="text" id="age" name="Age" required="true">
+                <br>
+
+                <label for="age">7. Do you speak a second language?</label>
+                <select onchange="setVisible(this)">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select><br>
+
+                <div id="yes">
+                    <label id="ifYes" for="yes">YES, my second language is:</label>
+                    <input type="text" id="yes" name="Yes" required="true"><br>
+
+                    <label id="Q8" for="age">8. Please specify the age at which you started to learn your second languiage in the following situations (write age next to any situation that applies).</label><br><br>
+
+                    <label id="Q8home" for="home">At home:</label>
+                    <input type="text" id="home" name="Home" required="true"><br>
+
+                    <label id="Q8school" for="home">In School:</label>
+                    <input type="text" id="school" name="School" required="true"><br>
+
+                    <label id="Q8lbl" for="age">After arriving in the second language speaking country, how did you learn your second language up to this point (cheack all that apply)</label><br><br>
+
+                    <form action="">
+                        <input type="checkbox" name="learned" value="Classroom Instruction">Mainly through Classroom Instruction<br>
+                        <input type="checkbox" name="learned" value="Interacting with People">Mainly through interacting with people<br>
+                        <input type="checkbox" name="learned" value="Interacting with People">A mixture of both<br>
+                        <input type="checkbox" name="learned" value="Interacting with People">Other<br>
+                    </form>
+                    <label id="ifYes" for="yes">Please specify:</label>
+                    <input type="text" id="yes" name="Yes" required="true"><br>
+
+                </div>
+
+
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+
+        </font>
+    </div>
+
+</body>
+<script>
+    function setVisible(elem) {
+
+        if (elem.value == "No") {
+            document.getElementById("yes").style.display = "none";
+        }
+        else if (elem.value == "Yes") {
+            document.getElementById("yes").style.display = "block";
+        }
+    }
+</script>
+
+
+</html>

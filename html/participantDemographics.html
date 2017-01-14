@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href= "../css/forms.css" />
+
+<body>
+
+
+
+
+    <div>
+        <font face="times new roman" size="4">
+            <h2>Participant Demographics:</h2><br>
+            <form action="action_page.php">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="Age" required="true">
+                <span class="asterisk_input"></span>
+                <br>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="Gender" required="true">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <span class="asterisk_input"></span>
+                <br>
+
+                <label for="country">Country of Origin:</label>
+                <input type="text" id="country" name="Country" required="true">
+                <span class="asterisk_input"></span>
+                <br>
+
+                <label for="countryFather">Country of Origin (Father):</label>
+                <input type="text" id="countryFather" name="CountryFather">
+                <br>
+
+                <label for="countryMother">Country of Origin (Mother):</label>
+                <input type="text" id="countryMother" name="CountryMother">
+                <br>
+
+                <label for="currentCityState">City and State Where you Currently Reside:</label>
+                <input type="text" id="currentCityState" name="CurrentCityState" required="true">
+                <span class="asterisk_input"></span>
+                <br>
+                <br>
+
+
+
+                <input type="submit" value="Submit">
+            </form>
+
+        </font>
+    </div>
+
+</body>
+</html>
