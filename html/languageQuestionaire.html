@@ -44,45 +44,45 @@
 
     <div>
         <font size="5">
-            <h2>Language History Questionaire:</h2><br>
+            <h2>Language History Questionnaire:</h2><br>
         </font>
         <font face="times new roman" size="4">
 
             <form action="action_page.php">
 
-                <label for="age">3. Education: (degree obtained or school level attended):</label>
-                <input type="text" id="age" name="Age" required="true">
+                <label for="education">3. Education: (degree obtained or school level attended):</label>
+                <input type="text" id="education" name="Education" required="true">
                 <br>
 
-                <label for="age">4(a). Country of Origin:</label>
-                <input type="text" id="age" name="Age" required="true">
+                <label for="countryOrigin">4(a). Country of Origin:</label>
+                <input type="text" id="countryOrigin" name="CountryOrigin" required="true">
                 <br>
 
-                <label for="age">4(b). Country of Residence:</label>
-                <input type="text" id="age" name="Age" required="true">
+                <label for="countryResidence">4(b). Country of Residence:</label>
+                <input type="text" id="countryResidence" name="CountryResidence" required="true">
                 <br>
 
-                <label for="age">5. How long have you liven in a foreign country where your second language is spoken?</label>
-                <input type="text" id="age" name="Age" required="true">
+                <label for="q5A">5. How long have you liven in a foreign country where your second language is spoken?</label>
+                <input type="text" id="q5A" name="Q5A" required="true">
                 <br>
 
-                <label for="age">5. How long have you lived in the country of your current residence?</label>
-                <input type="text" id="age" name="Age" required="true">
+                <label for="q5B">5. How long have you lived in the country of your current residence?</label>
+                <input type="text" id="q5B" name="Q5B" required="true">
                 <br>
 
-                <label for="age">6. What is your native language? (if you grew up with more than one language, please specify)</label>
-                <input type="text" id="age" name="Age" required="true">
+                <label for="nativeLang">6. What is your native language? (if you grew up with more than one language, please specify)</label>
+                <input type="text" id="nativeLang" name="NativeLang" required="true">
                 <br>
 
-                <label for="age">7. Do you speak a second language?</label>
-                <select onchange="setVisible(this)">
+                <label for="secondLang">7. Do you speak a second language?</label>
+                <select id="secondLang" onchange="setVisible(this)">
                     <option value="No">No</option>
                     <option value="Yes">Yes</option>
                 </select><br>
 
                 <div id="yes">
-                    <label id="ifYes" for="yes">YES, my second language is:</label>
-                    <input type="text" id="yes" name="Yes" required="true"><br>
+                    <label id="ifYes" for="yesx">YES, my second language is:</label>
+                    <input type="text" id="yesx" name="Yes" required="true"><br>
 
                     <label id="Q8" for="age">8. Please specify the age at which you started to learn your second languiage in the following situations (write age next to any situation that applies).</label><br><br>
 
@@ -94,37 +94,206 @@
 
                     <label id="Q8lbl" for="age">After arriving in the second language speaking country, how did you learn your second language up to this point (cheack all that apply)</label><br><br>
 
-                    <form action="">
+                    <form id="q8CheckBox" action="">
                         <input type="checkbox" name="learned" value="Classroom Instruction">Mainly through Classroom Instruction<br>
                         <input type="checkbox" name="learned" value="Interacting with People">Mainly through interacting with people<br>
                         <input type="checkbox" name="learned" value="Interacting with People">A mixture of both<br>
                         <input type="checkbox" name="learned" value="Interacting with People">Other<br>
                     </form>
-                    <label id="ifYes" for="yes">Please specify:</label>
-                    <input type="text" id="yes" name="Yes" required="true"><br>
+                    <label id="ifYesQ8" for="yes">Please specify:</label>
+                    <input type="text" id="yesQ8" name="YesQ8" required="true"><br>
+
+                    <label id="Q8foreign" for="language">List all foreign languages you know in order of most proficient to least proficient. Rate your ability on the following aspects in each language. 
+                    Please rate according to the following scale (write down the number in the table):<br>
+                    
+                    </label><br>
+
+                    <table>
+                        <tr>
+                            <th>Language</th>
+                            <th>Reading Proficiency</th>
+                            <th>Writing Proficiency</th>
+                            <th>Speaking Proficiency</th>
+                            <th>Listening Ability</th>
+                        </tr>
+                    </table><br>
+
+                    <label id="" for="">Provide an age at which your were first exposed to each foreign language in terms of speaking, reading and writing, and the number of years you have spent on learning
+                    each language.</label><br>
+
+                    <table>
+                        <tr>
+                            <th>Language</th>
+                            <th>Numbers of years learning</th>
+                            <th>Speaking</th>
+                            <th>Reading</th>
+                            <th>Writing</th>
+                        </tr>
+                    </table><br>
+
+                    <label id="" for="">Do you have a foreign accents in the languages you speak? If so, please rate the strength of your accent on a sale from 1 (not much of an accent) to 7 (very good accent).</label><br>
+
+                    <table>
+                        <tr>
+                            <th>Language</th>
+                            <th>Accent strength</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="radio" name="select" value="Y">Y
+                                <input type="radio" name="select" value="N">N</td>
+                        </tr>
+                    </table>
+
+                    <label id="" for="">PART B</label><br>
+
+                    <label id="" for="">What language do you usually speak to your mother at home? (If not applicable for any reason, type N/A).</label><br>
+
+                    <label id="" for="">What language do you usually speak to your father at home? (If not applicable for any reason, type N/A).</label><br>
+
+                    <label id="" for="">What languages can your parents speak fluently? (If not applicable for any reason, type N/A).<br >
+                    
+                    Mother: <br>
+                    Father: <br>
+                    
+                    </label><br>
+
+                    <label id="" for="">What language or languages do your parents usually speak to each other at home? (If not applicable for any reason, write N/A).</label><br>
+
+                    <label id="" for="">Type the name of the language in which you received instruction in school, for each schooling level:<br>
+                    
+                    Primary/Elementary School:<br>
+                    High School:<br>
+                    College/University:</label><br><br>
+
+                    <label id="" for="">Estimate, in terms of percentages, how often you use your native language and other languages per day (in all daily activites combined):<br>
+                    
+                    Native language: % <br>
+                    Second language: % <br>
+                    Other languages: % (specify:)<br>
+                    (Total should equal 100%)<br>
+                    </label><br>
+
+                    <label id="" for="">Estimate, in terms of hours per day, how often you watch TV or listen to radio in your native language and other languages per day.<br>
+                    
+                    Native language: hrs <br>
+                    Second language: hrs <br>
+                    Other languages: hrs  (specify the languages and hrs)
+                    </label><br><br>
+
+                    <label id="" for="">Estimate, in terms of hours per day, how often you used your native language and other languages per day for workor study related activities
+                    (e.g. going to classes, writing papers, talking to colleagues, classmates, or peers).<br>
+                    
+                    Native language: hrs <br>
+                    Second language: hrs <br>
+                    Other languages: hrs 
+                    </label>
+
+                    <label id="" for="">In which languages do you usually:<br>
+                    Add, multiply, and so simple arithmetic? <br>
+                    Dream?<br>
+                    Express your anger or affection?<br><br>
+                    </label>
+                   
+                    <label id="" for="">When you are speaking, do you ever mix words or sentences from the two or more languages you know? (If not, skip to question 25).</label><br><br>
+
+                    <label id="" for="">List the languages that you mix and rate the frequency of mixing in normal conversation with the following people, on a scale from 1 (mixing is
+                    very rare) to 5 (mixing is very frequent). Type the number in the box.<br>
+
+                    <table>
+                        <tr>
+                            <th>Relationship</th>
+                            <th>Languages mixed</th>
+                            <th>Frequency of mixing</th>
+                            <th>Spouse/family members</th>
+                            <th>Friends</th>
+                            <th>Coworkers</th>
+                        </tr>
+                    </table></label><br>
+
+                    <label id="" for="">In which language (among your best two languages) do you feel you usually do better? Type the name of the language under each condition.
+                    
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>At home</th>
+                            <th>At work</th>
+                        </tr>
+                        <tr>
+                            <td>Reading</td>
+                        </tr>
+                        <tr>
+                            <td>Writing</td>
+                        </tr>
+                        <tr>
+                            <td>Speaking</td>
+                        </tr>
+                        <tr>
+                            <td>Understanding</td>
+                        </tr>
+                    </table>
+                    </label><br><br>
+
+                    <label id="" for="">Among the languages you know, which language is the one that you wold prefer to use in these situations?<br>
+                    
+                    At home: <br>
+                    At work: <br>
+                    At a party: <br>
+                    In general: 
+                    </label><br><br>
+
+                    <label id="" for="">If you have lived or travelled in other countries formore than three montsh, please indicate the name(s) of the country or countries,
+                    your length of stay, and the language(s) you learned or tried to learn.</label><br><br>
+
+                    <label id="" for="">If you have taken a standardized test of proficiency for langauges other than your native language (e.g. TOEFL or Test of English as a 
+                    Foreign Language), please indiciate the scores you received for each.<br>
+                    
+                    <table>
+                        <tr>
+                            <th>Language</th>
+                            <th>Scores</th>
+                            <th>Name of the test</th>
+                        </tr>
+                    </table>
+                    </label><br><br>
+
+                    <label id="" for="">If there is anything else that you feel is interesting or important about your language background or language use, please comment below.</label><br><br>
+
+                    <label id="" for="">PART C</label><br /><br />
+
+                    <label id="" for="">Do you have additional questions that you feel are not included above? If yes, please type your questions.</label>
 
                 </div>
-
+                 
 
                 <br>
-                <input type="submit" value="Submit">
+                <input id="submitBtn" type="submit" value="Submit" onclick="writeToDB()">
             </form>
 
         </font>
     </div>
 
-</body>
-<script>
-    function setVisible(elem) {
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC7uT1yQKlDvIr0hL2_X9Er0fL5GYtUP5k",
+            authDomain: "language-test-feb11.firebaseapp.com",
+            databaseURL: "https://language-test-feb11.firebaseio.com",
+            storageBucket: "language-test-feb11.appspot.com",
+            messagingSenderId: "447859999500"
+        };
+        firebase.initializeApp(config);
+    </script>
 
-        if (elem.value == "No") {
-            document.getElementById("yes").style.display = "none";
-        }
-        else if (elem.value == "Yes") {
-            document.getElementById("yes").style.display = "block";
-        }
-    }
-</script>
+
+
+    <script src="../js/languageHistoryQuestionnaire.js"></script>
+
+
+</body>
+
+
 
 
 </html>
