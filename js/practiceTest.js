@@ -1,3 +1,9 @@
+var btnRed = document.getElementById("btn1");
+var btnBlue = document.getElementById("btn2");
+var btnOrange = document.getElementById("btn3");
+var btnGreen = document.getElementById("btn4");
+
+
 var mname = document.getElementById("fullName").value;
 var Participant = {
                 name: mname ,
@@ -6,10 +12,14 @@ var Participant = {
                 answers: [],
 };
  
+
+var fireBaseRef = firebase.database().ref();
+
+
 var questions = {
  
 value: [
-                "Select Red",
+    "Select Red",
     "Select Green",
     "Select Blue",
     "Select Yellow",
@@ -32,10 +42,43 @@ answers: [
 var index = 0;
  
  
+
+function writeRed() {
+    var fireBaseRef = firebase.database().ref();
+
+    fireBaseRef.child("Practice Test").set("");
+    fireBaseRef.child("Practice Test").child("Question" + (index + 1)).set("RED");
+}
  
  
 function displayNextQuestion(value) {
-                if(index >= questions.value.length) {
+    
+    if (index == 0) {
+        fireBaseRef.child("Practice Test").set("");
+    }
+
+    if (value == "red") {
+
+        
+        fireBaseRef.child("Practice Test").child("Question " + (index + 1)).set("RED");
+    }
+
+    else if (value == "blue") {
+        
+        fireBaseRef.child("Practice Test").child("Question " + (index + 1)).set("BLUE");
+    }
+
+    else if (value == "orange") {
+        
+        fireBaseRef.child("Practice Test").child("Question " + (index + 1)).set("ORANGE");
+    }
+
+    else if (value == "green") {
+        
+        fireBaseRef.child("Practice Test").child("Question " + (index + 1)).set("GREEN");
+    }
+
+    if(index >= questions.value.length) {
                 document.getElementById("content").innerHTML  = "Questions ended";
                 showResults();
     }
@@ -61,6 +104,7 @@ function showResults() {
     }
                 document.getElementById("results").innerHTML  = allResults;
 }
+
  
  
  

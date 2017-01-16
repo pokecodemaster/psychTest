@@ -6,7 +6,8 @@
  
 Enter Your Full Name: <input id="fullName"></input>
  
-<p id="content"></p>
+<font face="verdana"><h2 id="content"></h2></font>
+
 <p id="selectedValue"></p>
 <p id="demo"></p>
  
@@ -16,8 +17,23 @@ Enter Your Full Name: <input id="fullName"></input>
 <button id="btn4" class="buttong" onclick="displayNextQuestion(this.value)" value="green">Green</button>
  
 <p id="results"></p>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC7uT1yQKlDvIr0hL2_X9Er0fL5GYtUP5k",
+            authDomain: "language-test-feb11.firebaseapp.com",
+            databaseURL: "https://language-test-feb11.firebaseio.com",
+            storageBucket: "language-test-feb11.appspot.com",
+            messagingSenderId: "447859999500"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
  
 <script type="text/javascript" src="../js/practiceTest.js"> </script>
-<link rel="stylesheet" type="text/css" media="print" href="../css/styleSheet.css" /> 
+<link rel="stylesheet" href="../css/styleSheet.css" /> 
 </body>
 </html>
