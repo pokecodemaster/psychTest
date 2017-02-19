@@ -2,6 +2,7 @@ var btnRed = document.getElementById("btn1");
 var btnBlue = document.getElementById("btn2");
 var btnOrange = document.getElementById("btn3");
 var btnGreen = document.getElementById("btn4");
+var Name = document.getElementById("fullName");
 
 
 var mname = document.getElementById("fullName").value;
@@ -46,36 +47,36 @@ var index = 0;
 function writeRed() {
     var fireBaseRef = firebase.database().ref();
 
-    fireBaseRef.child("Practice Test").set("");
-    fireBaseRef.child("Practice Test").child("Question" + (index + 1)).set("RED");
+    fireBaseRef.child("Person2").child("Practice Test").set("");
+    fireBaseRef.child("Person2").child("Practice Test").child("Question" + (index + 1)).set("RED");
 }
  
  
 function displayNextQuestion(value) {
     
     if (index == 0) {
-        fireBaseRef.child("Practice Test").set("");
+        fireBaseRef.child(Name.value).child("Practice Test").set("");
     }
 
     if (value == "red") {
 
         
-        fireBaseRef.child("Practice Test").child("Question " + (index + 1)).set("RED");
+        fireBaseRef.child(Name.value).child("Practice Test").child("Question " + (index + 1)).set("RED");
     }
 
     else if (value == "blue") {
         
-        fireBaseRef.child("Practice Test").child("Question " + (index + 1)).set("BLUE");
+        fireBaseRef.child(Name.value).child("Practice Test").child("Question " + (index + 1)).set("BLUE");
     }
 
     else if (value == "orange") {
         
-        fireBaseRef.child("Practice Test").child("Question " + (index + 1)).set("ORANGE");
+        fireBaseRef.child(Name.value).child("Practice Test").child("Question " + (index + 1)).set("ORANGE");
     }
 
     else if (value == "green") {
         
-        fireBaseRef.child("Practice Test").child("Question " + (index + 1)).set("GREEN");
+        fireBaseRef.child(Name.value).child("Practice Test").child("Question " + (index + 1)).set("GREEN");
     }
 
     if(index >= questions.value.length) {
@@ -97,12 +98,13 @@ function logAnswer(value){
  
 function showResults() {
                 var mname = document.getElementById("fullName").value;
-                var allResults = "Results for " + document.getElementById("fullName").value + "<br>";
+                var allResults = "Results for " + Name.value + "<br>";
     for(var i=0; i<Participant.times.length; i++)
     {
                 allResults += questions.value[i] + ": " + Participant.times[i] + "<br>";
     }
-                document.getElementById("results").innerHTML  = allResults;
+    document.getElementById("results").innerHTML = allResults;
+    window.location.href = "languageQuestionaire.html";
 }
 
  

@@ -39,6 +39,26 @@
         height: 25px;
         width: 25px;
     }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
 </style>
 <body>
 
@@ -58,16 +78,13 @@
                 <input type="text" id="countryOrigin" name="CountryOrigin" required="true">
                 <br>
 
-                <label for="countryResidence">4(b). Country of Residence:</label>
-                <input type="text" id="countryResidence" name="CountryResidence" required="true">
+                <label for="countryResidence"> (b). Country of Residence:</label>
+                <input type="text" id="countryResidence" name="CountryResidence" required="true" onchange="showQuestion5()">
                 <br>
 
-                <label for="q5A">5. How long have you liven in a foreign country where your second language is spoken?</label>
+
+                <label for="q5A" id="q5Label">5. How long have you lived in the country of your current residence?</label>
                 <input type="text" id="q5A" name="Q5A" required="true">
-                <br>
-
-                <label for="q5B">5. How long have you lived in the country of your current residence?</label>
-                <input type="text" id="q5B" name="Q5B" required="true">
                 <br>
 
                 <label for="nativeLang">6. What is your native language? (if you grew up with more than one language, please specify)</label>
@@ -108,15 +125,45 @@
                     
                     </label><br>
 
-                    <table>
-                        <tr>
-                            <th>Language</th>
-                            <th>Reading Proficiency</th>
-                            <th>Writing Proficiency</th>
-                            <th>Speaking Proficiency</th>
-                            <th>Listening Ability</th>
-                        </tr>
-                    </table><br>
+                    <div id="myform">
+                        <table id="langTable">
+                            <tr>
+                                <td>Language:</td>
+                                <td><input type="text" id="name" onchange="enableAdd()"></td>
+                            </tr>
+                            <tr>
+                                <td>Writing:</td>
+                                <td><input type="text" id="writing" onchange="enableAdd()"></td>
+                            </tr>
+                            <tr>
+                                <td>Listening:</td>
+                                <td><input type="text" id="listening" onchange="enableAdd()"></td>
+                            </tr>
+                            <tr>
+                                <td>Reading:</td>
+                                <td>
+                                    <input type="text" id="reading" onchange="enableAdd()">
+                                    <input type="button" id="add" value="Add" onclick="addRow()" disabled>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="mydata">
+                        <table id="myTableData" border="1" cellpadding="2">
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td><b>Language</b></td>
+                                <td><b>Writing</b></td>
+                                <td><b>Listening</b></td>
+                                <td><b>Reading</b></td>
+                            </tr>
+                        </table>
+                        &nbsp;
+                    </div>
 
                     <label id="" for="">Provide an age at which your were first exposed to each foreign language in terms of speaking, reading and writing, and the number of years you have spent on learning
                     each language.</label><br>
