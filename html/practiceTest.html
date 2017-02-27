@@ -2,19 +2,22 @@
 <html>
 <body>
  
-<p>A script on this page starts this clock:</p>
- 
-Enter Your Full Name: <input id="fullName"></input>
+
+
  
 <font face="verdana"><h2 id="content"></h2></font>
 
 <p id="selectedValue"></p>
 <p id="demo"></p>
  
-<button id="btn1" class="buttonr" onclick="displayNextQuestion(this.value)" value="red">Red</button>
-<button id="btn2" class="buttonb" onclick="displayNextQuestion(this.value)" value="blue">Blue</button>
-<button id="btn3" class="buttono" onclick="displayNextQuestion(this.value)" value="orange">Orange</button>
-<button id="btn4" class="buttong" onclick="displayNextQuestion(this.value)" value="green">Green</button>
+<button id="startBtn" onclick="writeRed()">Start</button><br />
+
+    <div class="wrapper">
+        <button id="btn1" class="buttonr" onclick="displayWord()" value="red"></button>
+        <button id="btn2" class="buttonb" onclick="displayWord()" value="blue"></button><br />
+        <button id="btn3" class="buttono" onclick="displayWord()" value="orange"></button>
+        <button id="btn4" class="buttong" onclick="displayWord()" value="green"></button>
+    </div>
  
 <p id="results"></p>
 

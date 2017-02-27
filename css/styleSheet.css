@@ -1,8 +1,18 @@
+p, a {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100px;
+  color: #777;
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration:none;
+}
 .buttonr {
     background-color: #f44336;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 60px 128px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -14,7 +24,7 @@
     background-color: #008CBA;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 60px 128px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -26,7 +36,7 @@
     background-color: #FFA500;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 60px 128px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -38,11 +48,14 @@
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 60px 128px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+.wrapper {
+    text-align: center;
 }

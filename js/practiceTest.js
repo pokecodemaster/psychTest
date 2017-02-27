@@ -5,16 +5,9 @@ var btnGreen = document.getElementById("btn4");
 var Name = document.getElementById("fullName");
 
 
-var mname = document.getElementById("fullName").value;
-var Participant = {
-                name: mname ,
-                score:"500",
-                times:[],
-                answers: [],
-};
- 
+var words = ["+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-"];
 
-var fireBaseRef = firebase.database().ref();
+var colors = ["red","blue","green","orange"];
 
 
 var questions = {
@@ -41,6 +34,19 @@ answers: [
 }
  
 var index = 0;
+
+
+function startTest() {
+    displayWord();
+}
+
+
+function displayWord() {
+    var randColor = colors[Math.floor(Math.random() * colors.length)];
+    var randWord = words[Math.floor(Math.random() * words.length)];
+    document.getElementById("demo").style.color = randColor;
+    document.getElementById("demo").innerHTML = randWord;
+}
  
  
 
@@ -48,47 +54,14 @@ function writeRed() {
     var fireBaseRef = firebase.database().ref();
 
     fireBaseRef.child("Person2").child("Practice Test").set("");
-    fireBaseRef.child("Person2").child("Practice Test").child("Question" + (index + 1)).set("RED");
+    fireBaseRef.child("Person2").child("Practice Test").child("Word: coger").set("Displayed:RED, Selected:RED, Status:Correct, Time: 0:02");
+    fireBaseRef.child("Person2").child("Practice Test").child("Word: pendejo").set("Displayed:BLUE, Selected:RED, Status:Incorrect, Time: 0:03");
+    fireBaseRef.child("Person2").child("Practice Test").child("Word: mierda").set("Displayed:ORANGE, Selected:ORANGE, Status:Correct, Time: 0:01");
+    fireBaseRef.child("Person2").child("Practice Test").child("Word: mear").set("Displayed:GREEN, Selected:GREEN, Status:Incorrect, Time: 0:04");
 }
  
  
 function displayNextQuestion(value) {
-    
-    if (index == 0) {
-        fireBaseRef.child(Name.value).child("Practice Test").set("");
-    }
-
-    if (value == "red") {
-
-        
-        fireBaseRef.child(Name.value).child("Practice Test").child("Question " + (index + 1)).set("RED");
-    }
-
-    else if (value == "blue") {
-        
-        fireBaseRef.child(Name.value).child("Practice Test").child("Question " + (index + 1)).set("BLUE");
-    }
-
-    else if (value == "orange") {
-        
-        fireBaseRef.child(Name.value).child("Practice Test").child("Question " + (index + 1)).set("ORANGE");
-    }
-
-    else if (value == "green") {
-        
-        fireBaseRef.child(Name.value).child("Practice Test").child("Question " + (index + 1)).set("GREEN");
-    }
-
-    if(index >= questions.value.length) {
-                document.getElementById("content").innerHTML  = "Questions ended";
-                showResults();
-    }
-    else {
-                document.getElementById("content").innerHTML  = questions.value[index];
-                                document.getElementById("selectedValue").innerHTML  = value;
-                logAnswer(value);
-                index++;
-    }
    
 }
  
@@ -104,7 +77,7 @@ function showResults() {
                 allResults += questions.value[i] + ": " + Participant.times[i] + "<br>";
     }
     document.getElementById("results").innerHTML = allResults;
-    window.location.href = "languageQuestionaire.html";
+    //window.location.href = "languageQuestionaire.html";
 }
 
  
