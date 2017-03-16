@@ -5,34 +5,26 @@ var btnGreen = document.getElementById("btn4");
 var Name = document.getElementById("fullName");
 
 
-var words = ["+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-", "+-+-+-+-"];
+var spanish1 = ["uno", "dos", "tres", "cuatro"];
+var spanish2 = ["carro", "casa", "foco", "bote"];
+var english1 = ["one", "two", "three", "four"];
+var english2 = ["car", "house", "lightbulb", "bottle"];
 
 var colors = ["red","blue","green","orange"];
 
+//Randomizer
+function showMessage() {
 
-var questions = {
- 
-value: [
-    "Select Red",
-    "Select Green",
-    "Select Blue",
-    "Select Yellow",
-    "Select Red",
-    "Select Blue",
-    "Select Yellow"
-    ],
-answers: [
-                "red",
-    "red",
-    "blue",
-    "blue",
-    "orange",
-    "orange",
-    "green"
-    ],
-   
+var sp1 = spanish1[Math.floor(Math.random() * spanish1.length)];
+var sp2 = spanish2[Math.floor(Math.random() * spanish2.length)];
+var en1 = english1[Math.floor(Math.random() * english1.length)];
+var en2 = english2[Math.floor(Math.random() * english2.length)];
+
+var postmessage = sp1 + " - " + sp2 + " - " + en1 + " - " + en2;
+document.getElementById("par").innerHTML = postmessage
+
 }
- 
+//end randomizer
 var index = 0;
 
 
@@ -53,11 +45,11 @@ function displayWord() {
 function writeRed() {
     var fireBaseRef = firebase.database().ref();
 
-    fireBaseRef.child("Person2").child("Practice Test").set("");
-    fireBaseRef.child("Person2").child("Practice Test").child("Word: coger").set("Displayed:RED, Selected:RED, Status:Correct, Time: 0:02");
-    fireBaseRef.child("Person2").child("Practice Test").child("Word: pendejo").set("Displayed:BLUE, Selected:RED, Status:Incorrect, Time: 0:03");
-    fireBaseRef.child("Person2").child("Practice Test").child("Word: mierda").set("Displayed:ORANGE, Selected:ORANGE, Status:Correct, Time: 0:01");
-    fireBaseRef.child("Person2").child("Practice Test").child("Word: mear").set("Displayed:GREEN, Selected:GREEN, Status:Incorrect, Time: 0:04");
+    fireBaseRef.child("Person2").child("WordTest 1").set("");
+    fireBaseRef.child("Person2").child("WordTest 1").child("Word: coger").set("Displayed:RED, Selected:RED, Status:Correct, Time: 0:02");
+    fireBaseRef.child("Person2").child("WordTest 1").child("Word: pendejo").set("Displayed:BLUE, Selected:RED, Status:Incorrect, Time: 0:03");
+    fireBaseRef.child("Person2").child("WordTest 1").child("Word: mierda").set("Displayed:ORANGE, Selected:ORANGE, Status:Correct, Time: 0:01");
+    fireBaseRef.child("Person2").child("WordTest 1").child("Word: mear").set("Displayed:GREEN, Selected:GREEN, Status:Incorrect, Time: 0:04");
 }
  
  
