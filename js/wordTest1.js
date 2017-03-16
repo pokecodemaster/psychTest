@@ -61,6 +61,13 @@ function displayWord() {
     the very LAST word selected, then create a "Continue" button shown ONLY at the end of the
     test, and call the writeRed() method (which should be renamed, by the way) as an onclick event
     from that "Continue" button. */ 
+
+    /*ASSUMING YOU CAN CALL THE writeRed() METHOD:
+    you can pass the currentWord and color chosen as parameters or as global variables, concatinate
+    them into the DB writing.
+    i.e.
+    fireBaseRef.child("Person2").child("WordTest 1").child("Word: " + currentWord).set("Displayed:" + randColor + ", Selected:RED, Status:Correct, Time: 0:02");
+     */
 }
  
  
