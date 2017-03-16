@@ -16,7 +16,7 @@ var currWord = ""
 
 
 
-var colors = ["red","blue","green","orange"];
+var colors = ["RED","BLUE","GREEN","ORANGE"];
 
 //Randomizer
 function showMessage() {
@@ -41,6 +41,7 @@ function startTest() {
 var selectedWord = "";
 
 function displayWord() {
+    document.getElementById("dispMessage").innerHTML = "";
     var randColor = colors[Math.floor(Math.random() * colors.length)];
     
     var sp1 = spanish1[Math.floor(Math.random() * spanish1.length)];
@@ -53,6 +54,13 @@ function displayWord() {
 
     document.getElementById("demo").style.color = randColor;
     document.getElementById("demo").innerHTML = currWord;
+
+    //writeRed(); call the method and pass the current word and curent word, along with the time.
+    /*Currently we are writing by clicking on the button "start" which should not be the case
+    instead, try to write after each call of the method displayWord(). If that only writes
+    the very LAST word selected, then create a "Continue" button shown ONLY at the end of the
+    test, and call the writeRed() method (which should be renamed, by the way) as an onclick event
+    from that "Continue" button. */ 
 }
  
  
