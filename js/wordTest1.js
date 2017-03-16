@@ -35,9 +35,16 @@ function startTest() {
 
 function displayWord() {
     var randColor = colors[Math.floor(Math.random() * colors.length)];
-    var randWord = words[Math.floor(Math.random() * words.length)];
+    
+    var sp1 = spanish1[Math.floor(Math.random() * spanish1.length)];
+    var sp2 = spanish2[Math.floor(Math.random() * spanish2.length)];
+    var en1 = english1[Math.floor(Math.random() * english1.length)];
+    var en2 = english2[Math.floor(Math.random() * english2.length)];
+
+    var randCombo = sp1 + " - " + sp2 + " - " + en1 + " - " + en2;
+
     document.getElementById("demo").style.color = randColor;
-    document.getElementById("demo").innerHTML = randWord;
+    document.getElementById("demo").innerHTML = randCombo;
 }
  
  
