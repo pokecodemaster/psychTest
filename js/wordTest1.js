@@ -10,6 +10,12 @@ var spanish2 = ["carro", "casa", "foco", "bote"];
 var english1 = ["one", "two", "three", "four"];
 var english2 = ["car", "house", "lightbulb", "bottle"];
 
+var allWords = new Array();
+allWords.push(spanish1, spanish2, english1, english2);
+var currWord = ""
+
+
+
 var colors = ["red","blue","green","orange"];
 
 //Randomizer
@@ -32,6 +38,7 @@ function startTest() {
     displayWord();
 }
 
+var selectedWord = "";
 
 function displayWord() {
     var randColor = colors[Math.floor(Math.random() * colors.length)];
@@ -41,10 +48,11 @@ function displayWord() {
     var en1 = english1[Math.floor(Math.random() * english1.length)];
     var en2 = english2[Math.floor(Math.random() * english2.length)];
 
-    var randCombo = sp1 + " - " + sp2 + " - " + en1 + " - " + en2;
+    var allW = allWords[Math.floor(Math.random() * allWords.length)];
+    currWord = allW[Math.floor(Math.random() * allW.length)]
 
     document.getElementById("demo").style.color = randColor;
-    document.getElementById("demo").innerHTML = randCombo;
+    document.getElementById("demo").innerHTML = currWord;
 }
  
  
