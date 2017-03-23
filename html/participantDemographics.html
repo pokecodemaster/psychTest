@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href= "../css/forms.css" />
+
 
 <body>
 
@@ -45,11 +45,27 @@
 
 
 
-                <input type="submit" value="Submit">
+                <input type="submit" onclick="submitParticipantDemographics()" value="Submit">
             </form>
 
         </font>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC7uT1yQKlDvIr0hL2_X9Er0fL5GYtUP5k",
+            authDomain: "language-test-feb11.firebaseapp.com",
+            databaseURL: "https://language-test-feb11.firebaseio.com",
+            storageBucket: "language-test-feb11.appspot.com",
+            messagingSenderId: "447859999500"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script type="text/javascript" src="../js/consentForm.js"> </script>
+    <script type="text/javascript" src="../js/participantDemographics.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../css/forms.css" />
 </body>
 </html>

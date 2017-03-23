@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="../css/forms.css" />
+
 <body>
 
 
@@ -29,7 +29,11 @@
                 </textarea>
                 <br>
 
-                <label for="age">Name:</label>
+                <label for="age">Full Name:</label>
+                <input type="text" id="name" name="Name" required="true">
+                <span class="asterisk_input"></span>
+
+                <label for="age">Age:</label>
                 <input type="text" id="age" name="Age" required="true">
                 <span class="asterisk_input"></span>
                 <br>
@@ -41,11 +45,27 @@
 
 
 
-                <input type="submit" value="Submit">
+                <button onclick="submitForm()" value="Submit">Submit</button>
             </form>
 
         </font>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC7uT1yQKlDvIr0hL2_X9Er0fL5GYtUP5k",
+            authDomain: "language-test-feb11.firebaseapp.com",
+            databaseURL: "https://language-test-feb11.firebaseio.com",
+            storageBucket: "language-test-feb11.appspot.com",
+            messagingSenderId: "447859999500"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script type="text/javascript" src="../js/consentForm.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../css/forms.css" />
 
 </body>
 </html>
