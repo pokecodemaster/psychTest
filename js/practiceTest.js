@@ -33,7 +33,7 @@ answers: [
    
 }
  
-var index = 0;
+var index = 10;
 
 
 function startTest() {
@@ -42,10 +42,16 @@ function startTest() {
 
 
 function displayWord() {
-    var randColor = colors[Math.floor(Math.random() * colors.length)];
-    var randWord = words[Math.floor(Math.random() * words.length)];
-    document.getElementById("demo").style.color = randColor;
-    document.getElementById("demo").innerHTML = randWord;
+    if (index > 0) {
+        var randColor = colors[Math.floor(Math.random() * colors.length)];
+        var randWord = words[Math.floor(Math.random() * words.length)];
+        document.getElementById("demo").style.color = randColor;
+        document.getElementById("demo").innerHTML = randWord;
+    }
+    else {
+        window.location.href = 'continueTest.1.html';
+    }
+    index--;
 }
  
  

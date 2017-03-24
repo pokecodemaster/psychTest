@@ -4,6 +4,7 @@ var btnOrange = document.getElementById("btn3");
 var btnGreen = document.getElementById("btn4");
 var Name = document.getElementById("fullName");
 
+var fireBaseRef = firebase.database().ref();
 
 var spanish1 = ["uno", "dos", "tres", "cuatro"];
 var spanish2 = ["carro", "casa", "foco", "bote"];
@@ -14,9 +15,17 @@ var allWords = new Array();
 allWords.push(spanish1, spanish2, english1, english2);
 var currWord = ""
 
+var selectedWords = new Array();
+selectedWords.push("");
 
+var selectedColors = new Array();
+selectedColors.push("");
 
-var colors = ["RED","BLUE","GREEN","ORANGE"];
+var colors = ["RED", "BLUE", "GREEN", "ORANGE"];
+
+var index = 10;
+
+var selectedWord = "";
 
 //Randomizer
 function showMessage() {
@@ -31,16 +40,10 @@ document.getElementById("par").innerHTML = postmessage
 
 }
 //end randomizer
-var index = 0;
 
 
-function startTest() {
-    displayWord();
-}
-
-var selectedWord = "";
-
-function displayWord() {
+function displayWord(sel) {
+    
     document.getElementById("dispMessage").innerHTML = "";
     var randColor = colors[Math.floor(Math.random() * colors.length)];
     
@@ -52,57 +55,77 @@ function displayWord() {
     var allW = allWords[Math.floor(Math.random() * allWords.length)];
     currWord = allW[Math.floor(Math.random() * allW.length)]
 
+    selectedWords.push(currWord);
+    selectedColors.push(randColor);
+
     document.getElementById("demo").style.color = randColor;
     document.getElementById("demo").innerHTML = currWord;
 
-    //writeRed(); call the method and pass the current word and curent word, along with the time.
-    /*Currently we are writing by clicking on the button "start" which should not be the case
-    instead, try to write after each call of the method displayWord(). If that only writes
-    the very LAST word selected, then create a "Continue" button shown ONLY at the end of the
-    test, and call the writeRed() method (which should be renamed, by the way) as an onclick event
-    from that "Continue" button. */ 
+    if (index > 0) {
 
-    /*ASSUMING YOU CAN CALL THE writeRed() METHOD:
-    you can pass the currentWord and color chosen as parameters or as global variables, concatinate
-    them into the DB writing.
-    i.e.
-    fireBaseRef.child("Person2").child("WordTest 1").child("Word: " + currentWord).set("Displayed:" + randColor + ", Selected:RED, Status:Correct, Time: 0:02");
-     */
-}
- 
- 
-
-function writeRed() {
-    var fireBaseRef = firebase.database().ref();
-
-    fireBaseRef.child("Person2").child("WordTest 1").set("");
-    fireBaseRef.child("Person2").child("WordTest 1").child("Word: coger").set("Displayed:RED, Selected:RED, Status:Correct, Time: 0:02");
-    fireBaseRef.child("Person2").child("WordTest 1").child("Word: pendejo").set("Displayed:BLUE, Selected:RED, Status:Incorrect, Time: 0:03");
-    fireBaseRef.child("Person2").child("WordTest 1").child("Word: mierda").set("Displayed:ORANGE, Selected:ORANGE, Status:Correct, Time: 0:01");
-    fireBaseRef.child("Person2").child("WordTest 1").child("Word: mear").set("Displayed:GREEN, Selected:GREEN, Status:Incorrect, Time: 0:04");
-}
- 
- 
-function displayNextQuestion(value) {
-   
-}
- 
-function logAnswer(value){
-                Participant.times.push(value);
-}
- 
-function showResults() {
-                var mname = document.getElementById("fullName").value;
-                var allResults = "Results for " + Name.value + "<br>";
-    for(var i=0; i<Participant.times.length; i++)
-    {
-                allResults += questions.value[i] + ": " + Participant.times[i] + "<br>";
+        writeToDB(selectedWords[selectedWords.length - 2], sel.value, selectedColors[selectedColors.length - 2]);
     }
-    document.getElementById("results").innerHTML = allResults;
-    //window.location.href = "languageQuestionaire.html";
+    else {
+        window.location.href = 'continueTest.2.html';
+    }
+    index--;
+    
+
 }
 
- 
+function writeToDB(currWord, selColor, randColor) {
+    var status = "INCORRECT";
+
+    if (currWord != "") {
+        if (selColor == randColor) {
+            status = "CORRECT";
+        }
+        fireBaseRef.child("Person2").child("WordTest 1").child("Word: " + currWord.toUpperCase()).set("Displayed: " + selColor + " , Selected: " + randColor + ", Status: " + status + ", Time: 0:02");
+    }
+    
+}
+
+/*
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>A script on this page starts this clock:</p>
+
+<h2 id="timer"></h2>
+
+<script>
+var myVar = setInterval(myTimer, 1000);
+var s = new Date();
+
+function myTimer() {
+    var d = new Date();
+    var t = Math.round(Math.abs(d-s)/1000);
+    
+    if(t < 10) {
+    	document.getElementById("timer").innerHTML = "00:0" + t;
+    }
+    else if(t < 60) {
+    	document.getElementById("timer").innerHTML = "00:" + t;
+    }
+    else {
+    	var minutes = Math.floor(t/60);
+        var seconds = t-60;
+        if(seconds < 10) {
+        	document.getElementById("timer").innerHTML = "0" + minutes + ":0" + seconds;
+        }
+        else {
+        	document.getElementById("timer").innerHTML = "0" + minutes + ":" + seconds;
+        }
+        
+    }
+    
+}
+</script>
+
+</body>
+</html>
+*/
  
  
  
