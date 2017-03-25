@@ -3,10 +3,14 @@ var fireBaseRef = firebase.database().ref();
 var d = new Date();
 var KEY = d.getTime();
 
-localStorage.setItem("storageName", KEY);
+//document.cookie = KEY;
+
+//localStorage.setItem("storageName", KEY);
 
 
 function submitForm() {
+
+    document.cookie = KEY;
 
     var email = "myemaizl@email.com";
     var password = "mypassword";

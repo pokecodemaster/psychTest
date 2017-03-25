@@ -6,6 +6,16 @@ var Name = document.getElementById("fullName");
 
 var fireBaseRef = firebase.database().ref();
 
+var spanish = ["olla", "barril", "tela", "habitante", "tiempo", "mermelada", "unidad", "calle", "mesa", "noticias",
+"sueño", "vacación", "paz", "acuerdo", "afecto", "recompensa", "goce", "dicha", "suave", "florecer",
+"violación", "suicidio", "molestia", "tortura", "muerte", "soledad", "vómito", "dolor", "matanza", "pena",
+"coger", "pendejo", "escroto", "eyacular", "mear", "verga", "pene", "mierda", "chocha", "bastardo"];
+
+var english = ["kettle", "barrel", "fabric", "inhabitant", "time", "jelly", "unit", "street", "table", "news",
+"dream", "holiday", "peace", "agreement", "afection", "reward", "enjoyment", "bliss", "soft", "blossom",
+"rape", "suicide", "ache", "torture", "death", "loneliness", "vomit", "pain", "slaughter", "grief",
+"fuck", "asshole", "scrotum", "ejaculate", "piss", "dick", "cocl", "shit", "pussy", "bastard"];
+
 var spanish1 = ["uno", "dos", "tres", "cuatro"];
 var spanish2 = ["carro", "casa", "foco", "bote"];
 var english1 = ["one", "two", "three", "four"];
