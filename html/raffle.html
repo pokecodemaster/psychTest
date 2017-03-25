@@ -1,67 +1,61 @@
 <!DOCTYPE html>
 <html>
-<style>
-    input[type=text], select {
-        width: 50%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
 
-    input[type=submit] {
-        width: 30%;
-        background-color: #4CAF50;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    textarea {
-        font: 15px "Tahoma", Times, serif;
-        color: #003399;
-        white-space: pre-wrap";
-    }
-
-    input[type=submit]:hover {
-        background-color: #45a049;
-    }
-
-
-
-    .asterisk_input:after {
-        content: " *";
-        color: #e32;
-        display: inline;
-        margin: 0px 0px 0px -0.5px;
-        padding: 0 5px 0 0;
-    }
-
-
-    div {
-        border-radius: 5px;
-        background-color: #f2f2f2;
-        padding: 20px;
-    }
-
-
-    label {
-        display: inline-block;
-        width: 320px;
-        text-align: left;
-    }
-</style>
 <body>
 
 
 
 
-    -
+    <div>
+        <font size="5">
+            <h2>Raffle Page:</h2><br>
+        </font>
+        <font face="times new roman" size="4">
+
+            <form action="action_page.php">
+
+
+                <p>
+                   By providing your name and email, you will be entered in a raffle for a $100 American Express gift card. </br>
+                    The raffle will be held once data collection is complete. One winner will be selected and contacted via email.</br>
+                    The winner has one week to claim the prize. I f the winner cannot be contacted, a second winner will be selected from the pool of entrants.</br>
+                    Chance of winning depends on total amount of entries received.</br>
+                </p>
+                <br>
+
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="Age" required="true">
+                <span class="asterisk_input"></span>
+                <br>
+
+                <label for="gender">Gender:</label>
+                <select id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select><br>
+
+
+            </form>
+            <input type="submit" onclick="submitRaffleInfo()" value="Submit">
+
+        </font>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC7uT1yQKlDvIr0hL2_X9Er0fL5GYtUP5k",
+            authDomain: "language-test-feb11.firebaseapp.com",
+            databaseURL: "https://language-test-feb11.firebaseio.com",
+            storageBucket: "language-test-feb11.appspot.com",
+            messagingSenderId: "447859999500"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script type="text/javascript" src="../js/raffle.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../css/forms.css" />
 
 </body>
 </html>

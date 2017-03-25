@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html>
 <body>
- 
 
-
- 
 <font face="verdana"><h2 id="content"></h2></font>
 <h4 align="center" id="dispMessage">Click any Color to Begin</h4>
 <p id="selectedValue"></p>
 <p id="demo"></p>
- 
-<button id="startBtn" onclick="writeRed()">Start</button><br />
+<h2 id="timer"></h2>
 
     <div class="wrapper">
-        <button id="btn1" class="buttonr" onclick="displayWord()" value="red"></button>
-        <button id="btn2" class="buttonb" onclick="displayWord()" value="blue"></button><br />
-        <button id="btn3" class="buttono" onclick="displayWord()" value="orange"></button>
-        <button id="btn4" class="buttong" onclick="displayWord()" value="green"></button>
+        <button id="btn1" class="buttonr" onclick="displayWord(this)" value="RED"></button>
+        <button id="btn2" class="buttonb" onclick="displayWord(this)" value="BLUE"></button><br />
+        <button id="btn3" class="buttono" onclick="displayWord(this)" value="ORANGE"></button>
+        <button id="btn4" class="buttong" onclick="displayWord(this)" value="GREEN"></button>
     </div>
  
 <p id="results"></p>
@@ -35,8 +31,8 @@
     </script>
 
 
- 
-<script type="text/javascript" src="../js/wordTest1.js"> </script>
+<!--Change this-->
+<script type="text/javascript" src="../js/wordTest2.js"> </script>
 <link rel="stylesheet" href="../css/styleSheet.css" /> 
 </body>
 </html>

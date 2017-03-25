@@ -1,0 +1,23 @@
+  p, a {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 20px;
+        color: #777;
+        margin: 0 auto;
+        text-align: center;
+        text-decoration: none;
+    }
+    .buttonb {
+        background-color: #008CBA;
+        border: none;
+        color: white;
+        padding: 10px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .wrapper {
+        text-align: center;
+    }

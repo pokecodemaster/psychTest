@@ -31,7 +31,7 @@ var myVar = setInterval(myTimer, 1000);
 var s = new Date();
 var buffer = 0;
 
-fireBaseRef.child("Person2").child("WordTest 1").set("");
+fireBaseRef.child("Person2").child("WordTest 4").set("");
 function displayWord(sel) {
     
     document.getElementById("dispMessage").innerHTML = "";
@@ -56,8 +56,7 @@ function displayWord(sel) {
         writeToDB(selectedWords[selectedWords.length - 2], sel.value, selectedColors[selectedColors.length - 2]);
     }
     else {
-        //change this
-        window.location.href = 'continueTest.2.html';
+        window.location.href = 'continueTest.5.html';
     }
     index--;
     
@@ -78,10 +77,10 @@ function writeToDB(currWord, selColor, randColor) {
         if (selColor == randColor) {
             status = "CORRECT";
         }
-        fireBaseRef.child("Person2").child("WordTest 1").child(currWord.toUpperCase()).child("Displayed In").set(selColor);
-        fireBaseRef.child("Person2").child("WordTest 1").child(currWord.toUpperCase()).child("Selected").set(randColor);
-        fireBaseRef.child("Person2").child("WordTest 1").child(currWord.toUpperCase()).child("Status").set(status);
-        fireBaseRef.child("Person2").child("WordTest 1").child(currWord.toUpperCase()).child("Time").set(time);
+        fireBaseRef.child("Person2").child("WordTest 4").child(currWord.toUpperCase()).child("Displayed In").set(selColor);
+        fireBaseRef.child("Person2").child("WordTest 4").child(currWord.toUpperCase()).child("Selected").set(randColor);
+        fireBaseRef.child("Person2").child("WordTest 4").child(currWord.toUpperCase()).child("Status").set(status);
+        fireBaseRef.child("Person2").child("WordTest 4").child(currWord.toUpperCase()).child("Time").set(time);
     }
     
 }
