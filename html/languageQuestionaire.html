@@ -70,35 +70,35 @@
 
             <form action="action_page.php">
 
-                <label for="education">3. Education: (degree obtained or school level attended):</label>
-                <input type="text" id="education" name="Education" required="true">
+                <label id="lbleducation" for="education">1. Education: (degree obtained or school level attended):</label>
+                <input type="text" id="education" name="Education" required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label for="countryOrigin">4(a). Country of Origin:</label>
-                <input type="text" id="countryOrigin" name="CountryOrigin" required="true">
+                <label id="lblcountryOrigin" for="countryOrigin">2(a). Country of Origin:</label>
+                <input type="text" id="countryOrigin" name="CountryOrigin" required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label for="countryResidence"> (b). Country of Residence:</label>
-                <input type="text" id="countryResidence" name="CountryResidence" required="true" onchange="showQuestion5()">
+                <label id="lblcountryResidence" for="countryResidence"> (b). Country of Residence:</label>
+                <input type="text" id="countryResidence" name="CountryResidence" required="true" onchange="writeFromText(this)">
                 <br>
 
 
-                <label for="q5A" id="q5Label">5. How long have you lived in the country of your current residence?</label>
-                <input type="text" id="q5A" name="Q5A" required="true">
+                <label for="q5A" id="lblq5A">3. How long have you lived in the country of your current residence?</label>
+                <input type="text" id="q5A" name="Q5A" required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label for="nativeLang">6. What is your native language? (if you grew up with more than one language, please specify)</label>
-                <input type="text" id="nativeLang" name="NativeLang" required="true">
+                <label id="lblnativeLang" for="nativeLang">4. What is your native language? (if you grew up with more than one language, please specify)</label>
+                <input type="text" id="nativeLang" name="NativeLang" required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label for="secondLang">7. Do you speak a second language?</label>
+                <label for="secondLang">5. Do you speak a second language?</label>
                 <select id="secondLang" onchange="setVisible(this)">
-                    <option value="No">No</option>
                     <option value="Yes">Yes</option>
+                    <option value="No">No</option>
                 </select><br>
 
                 <div id="yes">
-                    <label id="ifYes" for="yesx">YES, my second language is:</label>
+                    <label id="ifYes" for="yesx">5. YES, my second language is:</label>
                     <input type="text" id="yesx" name="Yes" required="true"><br>
 
                     <label id="Q8" for="age">8. Please specify the age at which you started to learn your second languiage in the following situations (write age next to any situation that applies).</label><br><br>
@@ -320,27 +320,27 @@
         </font>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyC7uT1yQKlDvIr0hL2_X9Er0fL5GYtUP5k",
-            authDomain: "language-test-feb11.firebaseapp.com",
-            databaseURL: "https://language-test-feb11.firebaseio.com",
-            storageBucket: "language-test-feb11.appspot.com",
-            messagingSenderId: "447859999500"
-        };
-        firebase.initializeApp(config);
-    </script>
-
-
-
-    <script src="../js/languageHistoryQuestionnaire.js"></script>
+   
 
 
 </body>
 
+<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyC7uT1yQKlDvIr0hL2_X9Er0fL5GYtUP5k",
+        authDomain: "language-test-feb11.firebaseapp.com",
+        databaseURL: "https://language-test-feb11.firebaseio.com",
+        storageBucket: "language-test-feb11.appspot.com",
+        messagingSenderId: "447859999500"
+    };
+    firebase.initializeApp(config);
+</script>
 
+
+
+<script src="../js/languageQuestionnaire.js"></script>
 
 
 </html>

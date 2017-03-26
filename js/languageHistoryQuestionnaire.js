@@ -71,7 +71,7 @@ function showQuestion5() {
     var q5A = document.getElementById("q5Label");
 
     if (ansOfA == ansOfB) {
-        q5A.innerHTML = "5. How long have you lived in a foreign country where your second language is spoken?";
+        q5A.innerHTML = "3. How long have you lived in a foreign country where your second language is spoken?";
         
     }
 

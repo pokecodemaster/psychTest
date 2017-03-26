@@ -6,14 +6,12 @@ var Name = document.getElementById("fullName");
 
 var fireBaseRef = firebase.database().ref();
 
-var spanish1 = ["uno", "dos", "tres", "cuatro"];
-var spanish2 = ["carro", "casa", "foco", "bote"];
-var english1 = ["one", "two", "three", "four"];
-var english2 = ["car", "house", "lightbulb", "bottle"];
+var spanish2 = ["barril", "mesa", "sueño", "acuerdo", "recompensa", "suicidio", "dolor", "eyacular", "verga", "chocha", ];
+var english2 = ["barrel", "table", "dream", "agreement", "reward", "suicide", "pain", "ejaculate", "dick", "pussy"];
 
 var allWords = new Array();
-allWords.push(spanish1, spanish2, english1, english2);
-var currWord = ""
+
+var currWord = new Array();
 
 var selectedWords = new Array();
 selectedWords.push("");
@@ -23,7 +21,7 @@ selectedColors.push("");
 
 var colors = ["RED", "BLUE", "GREEN", "ORANGE"];
 
-var index = 10;
+var index = 0;
 
 var selectedWord = "";
 
@@ -31,35 +29,47 @@ var myVar = setInterval(myTimer, 1000);
 var s = new Date();
 var buffer = 0;
 
-fireBaseRef.child("Person2").child("WordTest 4").set("");
+var uKey = document.cookie;
+uKey = uKey.substring(0, uKey.length - 1);
+
+fireBaseRef.child(uKey).child("WordTest 4").set("");
 function displayWord(sel) {
-    
+
+    if (allWords.length == 0) {
+
+        if (uKey[uKey.length - 1] % 2 == 1) {
+            allWords = shuffle(spanish2);
+            allWords.push("...");
+        }
+        else {
+            allWords = shuffle(english2);
+            allWords.push("...");
+        }
+
+    }
+
+
     document.getElementById("dispMessage").innerHTML = "";
     var randColor = colors[Math.floor(Math.random() * colors.length)];
-    
-    var sp1 = spanish1[Math.floor(Math.random() * spanish1.length)];
-    var sp2 = spanish2[Math.floor(Math.random() * spanish2.length)];
-    var en1 = english1[Math.floor(Math.random() * english1.length)];
-    var en2 = english2[Math.floor(Math.random() * english2.length)];
 
-    var allW = allWords[Math.floor(Math.random() * allWords.length)];
-    currWord = allW[Math.floor(Math.random() * allW.length)]
+    currWord = allWords[index];
 
     selectedWords.push(currWord);
     selectedColors.push(randColor);
 
-    document.getElementById("demo").style.color = randColor;
-    document.getElementById("demo").innerHTML = currWord;
 
-    if (index > 0) {
 
+    if (index <= 10) {
+        document.getElementById("demo").style.color = randColor;
+        document.getElementById("demo").innerHTML = currWord;
         writeToDB(selectedWords[selectedWords.length - 2], sel.value, selectedColors[selectedColors.length - 2]);
     }
     else {
+        //change this
         window.location.href = 'continueTest.5.html';
     }
-    index--;
-    
+    index++;
+
 
 }
 
@@ -77,12 +87,12 @@ function writeToDB(currWord, selColor, randColor) {
         if (selColor == randColor) {
             status = "CORRECT";
         }
-        fireBaseRef.child("Person2").child("WordTest 4").child(currWord.toUpperCase()).child("Displayed In").set(selColor);
-        fireBaseRef.child("Person2").child("WordTest 4").child(currWord.toUpperCase()).child("Selected").set(randColor);
-        fireBaseRef.child("Person2").child("WordTest 4").child(currWord.toUpperCase()).child("Status").set(status);
-        fireBaseRef.child("Person2").child("WordTest 4").child(currWord.toUpperCase()).child("Time").set(time);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 4").child(currWord.toUpperCase()).child("Displayed In").set(selColor);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 4").child(currWord.toUpperCase()).child("Selected").set(randColor);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 4").child(currWord.toUpperCase()).child("Status").set(status);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 4").child(currWord.toUpperCase()).child("Time").set(time);
     }
-    
+
 }
 
 function myTimer() {
@@ -127,6 +137,14 @@ function parseTime(t, idVal) {
     document.getElementById("timer").innerHTML = x
     return x;
 }
- 
- 
- 
+
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length; i; i--) {
+        j = Math.floor(Math.random() * i);
+        x = a[i - 1];
+        a[i - 1] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
