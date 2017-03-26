@@ -11,28 +11,28 @@
 
             <form action="action_page.php">
 
-                <label id="lbleducation" for="education">1 Education: (degree obtained or school level attended)</label>
+                <label id="lbleducation" for="education">-1 Education</label><label>: (degree obtained or school level attended)</label>
                 <input type="text" id="education" name="Education" required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label id="lblcountryOrigin" for="countryOrigin">2(a) Country of Origin:</label>
+                <label id="lblcountryOrigin" for="countryOrigin">-2(a) Country of Origin:</label>
                 <input type="text" id="countryOrigin" name="CountryOrigin" required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label id="lblcountryResidence" for="countryResidence">2(b) Country of Residence:</label>
+                <label id="lblcountryResidence" for="countryResidence">-2(b) Country of Residence:</label>
                 <input type="text" id="countryResidence" name="CountryResidence" required="true" onchange="writeFromText(this)">
                 <br>
 
 
-                <label for="q5A" id="lblq5A">3 How long have you lived in the country of your current residence?</label>
+                <label for="q5A" id="lblq5A">-3 How long have you lived in the country of your current residence?</label>
                 <input type="text" id="q5A" name="Q5A" required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label id="lblnativeLang" for="nativeLang">4 What is your native language? (if you grew up with more than one language, please specify)</label>
+                <label id="lblnativeLang" for="nativeLang">-4 What is your native language? (if you grew up with more than one language, please specify)</label>
                 <input type="text" id="nativeLang" name="NativeLang" required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label for="secondLang">5 Do you speak a second language?</label>
+                <label for="secondLang">-5 Do you speak a second language?</label>
                 <select id="secondLang" onchange="setVisible(this)">
                     <option value=" "> </option>
                     <option value="Yes">Yes</option>
@@ -40,33 +40,152 @@
                 </select><br>
 
                 <div id="yes">
-                    <label id="lblyesx" for="yesx">5(b) YES, my second language is</label>
+                    <label id="lblyesx" for="yesx">-5(b) YES, my second language is</label>
                     <input type="text" id="yesx" name="Yes" required="true" onchange="writeFromText(this)"><br><br />
 
                     <label>6 Please specify the age at which you started to learn your second language in the following situations (write age next to any situation that applies).</label><br><br>
 
-                    <label id="lblhome6" for="home6">6(a) At home:</label>
+                    <label id="lblhome6" for="home6">-6(a) At home:</label>
                     <input type="text" id="home6" name="Home" onchange="writeFromText(this)"><br>
 
-                    <label id="lblschool6" for="home6">6(b) In School:</label>
+                    <label id="lblschool6" for="home6">-6(b) In School:</label>
                     <input type="text" id="school6" name="School" onchange="writeFromText(this)"><br>
 
-                    <label id="lblafter6" for="after6">6(c) After arriving in the second language speaking country</label><br>
+                    <label id="lblafter6" for="after6">-6(c) After arriving in the second language speaking country</label><br>
                     <input type="text" id="after6" name="School" onchange="writeFromText(this)"><br><br />
 
                     <label>7 How did you learn your second language up to this point (write "Yes" in all that apply, otherwise leave blank)</label><br><br>
 
-                    <label id="lblclassroom7" for="classroom7">7(a) Mainly through classroom instruction</label>
+                    <label id="lblclassroom7" for="classroom7">-7(a) Mainly through classroom instruction</label>
                     <input type="text" id="classroom7" name="Home" onchange="writeFromText(this)"><br>
 
-                    <label id="lblinteract7" for="classroom7">7(b) Mainly though interacting with other people</label>
+                    <label id="lblinteract7" for="classroom7">-7(b) Mainly though interacting with other people</label>
                     <input type="text" id="interact7" name="School" onchange="writeFromText(this)"><br>
 
-                    <label id="lblmixture7" for="mixture7">7(c) A mixture of both</label><br>
+                    <label id="lblmixture7" for="mixture7">-7(c) A mixture of both</label><br>
                     <input type="text" id="mixture7" name="School" onchange="writeFromText(this)"><br>
 
-                    <label id="lblother7" for="other7">7(d) Other (specify)</label><br>
+                    <label id="lblother7" for="other7">-7(d) Other (specify)</label><br>
                     <input type="text" id="other7" name="School" onchange="writeFromText(this)"><br>
+
+                    <label id="lblLangTable">-8 List all Foreign Languages you know </label><label>in order of most proficient to leastr proficient. Rate your ability on the following aspects in each language.</label><br>
+                    <label>Please rate according to the following scale (write down the number in the table):</label><br>
+                    <label>very poor=1, poor=2, fair=3, functional=4, good=5, very good=6, native-like=7</label><br /><br />
+
+                    <table id="langTable" style="width:100%">
+                        <tr>
+                            <th>Language</th>
+                            <th>Reading Proficiency</th>
+                            <th>Writing Proficiency</th>
+                            <th>Speaking Proficiency</th>
+                            <th>Listening Proficiency</th>
+                        </tr>
+
+                        <tr>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                    </table>
+                    <br /><br />
+
+                    <label id="lblLangTable">-9 Provide and age at which you were first exposed </label><label>to each language in terms of speaking, reading, and writing, and the number of years you have spend on learning each language</label><br>
+                    <br />
+                    <table id="langTable" style="width:100%">
+                        <tr>
+                            <th>Language</th>
+                            <th>Speaking</th>
+                            <th>Reading</th>
+                            <th>Writing</th>
+                            <th>Number of years learning</th>
+                        </tr>
+
+                        <tr>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                    </table>
+                    <br /><br />
+
+                    <label id="lblLangTable">-10 Do you have a foreign accent </label><label>in the languages you speak?</label><br>
+                    <label>If so, please rate the strength of your accent on a scale from 1 (not much) to 7 (very strong accent)</label><br><br />
+
+                    <table id="langTable" style="width:100%">
+                        <tr>
+                            <th>Language</th>
+                            <th>Accent (write "yes" or "no")</th>
+                            <th>Strength</th>
+                        </tr>
+
+                        <tr>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                    </table>
+                    <br /><br />
 
                 </div>
                 <div id="no">

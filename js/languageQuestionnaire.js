@@ -4,7 +4,7 @@ var uKey = document.cookie;
 uKey = uKey.substring(0, uKey.length - 1);
 
 //Quita esta pinche linea ates de hacer el deploy!!!!!
-fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").set("");
+//fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").set("");
 
 function writeFromText(elem) {
     //get text from label
@@ -29,10 +29,10 @@ function showQuestion3() {
     var q5A = document.getElementById("lblq5A");
 
     if (ansOfA == ansOfB) {
-        q5A.innerHTML = "3 How long have you lived in a foreign country where your second language is spoken?";
+        q5A.innerHTML = "-3 How long have you lived in a foreign country where your second language is spoken?";
     }
     else if (ansOfA != ansOfB) {
-        q5A.innerHTML = "3 How long have you lived in the country of your current residence?";
+        q5A.innerHTML = "-3 How long have you lived in the country of your current residence?";
     }
 
     var question = document.getElementById("lblq5A").value;
