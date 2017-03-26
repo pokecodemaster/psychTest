@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<body onload="hideBlocks()">
+
+    <div>
+        <font size="5">
+            <h2>Language History Questionnaire:</h2>
+            <label><b>Part A</b></label><br><br/>
+        </font>
+        <font face="times new roman" size="4">
+
+            <form action="action_page.php">
+
+                <label id="lbleducation" for="education">1 Education: (degree obtained or school level attended)</label>
+                <input type="text" id="education" name="Education" required="true" onchange="writeFromText(this)">
+                <br>
+
+                <label id="lblcountryOrigin" for="countryOrigin">2(a) Country of Origin:</label>
+                <input type="text" id="countryOrigin" name="CountryOrigin" required="true" onchange="writeFromText(this)">
+                <br>
+
+                <label id="lblcountryResidence" for="countryResidence">2(b) Country of Residence:</label>
+                <input type="text" id="countryResidence" name="CountryResidence" required="true" onchange="writeFromText(this)">
+                <br>
+
+
+                <label for="q5A" id="lblq5A">3 How long have you lived in the country of your current residence?</label>
+                <input type="text" id="q5A" name="Q5A" required="true" onchange="writeFromText(this)">
+                <br>
+
+                <label id="lblnativeLang" for="nativeLang">4 What is your native language? (if you grew up with more than one language, please specify)</label>
+                <input type="text" id="nativeLang" name="NativeLang" required="true" onchange="writeFromText(this)">
+                <br>
+
+                <label for="secondLang">5 Do you speak a second language?</label>
+                <select id="secondLang" onchange="setVisible(this)">
+                    <option value=" "> </option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select><br>
+
+                <div id="yes">
+                    <label id="lblyesx" for="yesx">5(b) YES, my second language is</label>
+                    <input type="text" id="yesx" name="Yes" required="true" onchange="writeFromText(this)"><br><br />
+
+                    <label>6 Please specify the age at which you started to learn your second language in the following situations (write age next to any situation that applies).</label><br><br>
+
+                    <label id="lblhome6" for="home6">6(a) At home:</label>
+                    <input type="text" id="home6" name="Home" onchange="writeFromText(this)"><br>
+
+                    <label id="lblschool6" for="home6">6(b) In School:</label>
+                    <input type="text" id="school6" name="School" onchange="writeFromText(this)"><br>
+
+                    <label id="lblafter6" for="after6">6(c) After arriving in the second language speaking country</label><br>
+                    <input type="text" id="after6" name="School" onchange="writeFromText(this)"><br><br />
+
+                    <label>7 How did you learn your second language up to this point (write "Yes" in all that apply, otherwise leave blank)</label><br><br>
+
+                    <label id="lblclassroom7" for="classroom7">7(a) Mainly through classroom instruction</label>
+                    <input type="text" id="classroom7" name="Home" onchange="writeFromText(this)"><br>
+
+                    <label id="lblinteract7" for="classroom7">7(b) Mainly though interacting with other people</label>
+                    <input type="text" id="interact7" name="School" onchange="writeFromText(this)"><br>
+
+                    <label id="lblmixture7" for="mixture7">7(c) A mixture of both</label><br>
+                    <input type="text" id="mixture7" name="School" onchange="writeFromText(this)"><br>
+
+                    <label id="lblother7" for="other7">7(d) Other (specify)</label><br>
+                    <input type="text" id="other7" name="School" onchange="writeFromText(this)"><br>
+
+                </div>
+                <div id="no">
+                    <label>If you answered No, you need not continue this questionnaire. Press Continue.</label>
+                </div>
+
+
+                <br>
+               
+            </form>
+
+            <input id="submitBtn" type="submit" value="Continue" onclick="goTo()"></input>
+
+        </font>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC7uT1yQKlDvIr0hL2_X9Er0fL5GYtUP5k",
+            authDomain: "language-test-feb11.firebaseapp.com",
+            databaseURL: "https://language-test-feb11.firebaseio.com",
+            storageBucket: "language-test-feb11.appspot.com",
+            messagingSenderId: "447859999500"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
+
+    <script src="../js/languageQuestionnaire.js"></script>
+    <link rel="stylesheet" href="../css/questionnaires.css" /> 
+
+</body>
+
+
+
+
+</html>

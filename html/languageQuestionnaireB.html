@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<body onload="hideBlocks()">
+
+    <div>
+        <font size="5">
+            <h2>Language History Questionnaire:</h2>
+            <label><b>Part B</b></label><br><br/>
+            <label>Note: if any question is not applicable for any reason, write N/A (do not leave blank)</label><br><br>
+        </font>
+        <font face="times new roman" size="4">
+
+            <form action="action_page.php">
+
+                <label id="lblmotherHome" for="motherHome">11 What language do you usually speak to your mother at home?</label>
+                <input type="text" id="motherHome"  required="true" onchange="writeFromText(this)">
+                <br>
+
+                <label id="lblfatherHome" for="fatherHome">12 What language do you sually speak to your father at home</label>
+                <input type="text" id="fatherHome"  required="true" onchange="writeFromText(this)">
+                <br><br />
+
+                <label>13 What languages can your parents speak fluently?</label><br><br>
+
+                <label id="lblmother13" for="mother13">13(a) Mother</label>
+                <input type="text" id="mother13"  onchange="writeFromText(this)"><br>
+
+                <label id="lblfather13" for="father13">13(b) Father</label>
+                <input type="text" id="father13"  onchange="writeFromText(this)"><br>
+
+                <label id="lblparents14" for="parents14">14 What language do your parents usually speak to each other at home?</label>
+                <input type="text" id="parents14"  required="true" onchange="writeFromText(this)">
+                <br><br />
+
+                <label>15 Write down the language in which you received instruction in school for:</label><br><br>
+
+                <label id="lblprimary15" for="primary15">15(a) Primary-Elementary School</label>
+                <input type="text" id="primary15" onchange="writeFromText(this)"><br>
+
+                <label id="lblhighschool15" for="highschool15">15(b) High School</label>
+                <input type="text" id="highschool15" onchange="writeFromText(this)"><br>
+
+                <label id="lblcollege15" for="college15">15(c) College-University</label>
+                <input type="text" id="college15" onchange="writeFromText(this)"><br><br />
+
+                <label>16 Estimate, in terms of percentages, how often do you use your native language and other languages per day (in all activities combined)</label><br><br><br />
+
+                <label id="lblnative16" for="native16">16(a) Native language %</label>
+                <input type="text" id="native16" onchange="writeFromText(this)"><br>
+
+                <label id="lblsecond16" for="second16">16(b) Second language %</label>
+                <input type="text" id="second16" onchange="writeFromText(this)"><br>
+
+                <label id="lblother16" for="other16">16(c) Other languages %</label>
+                <input type="text" id="other16" onchange="writeFromText(this)"><br>
+
+                <label id="lblspec16" for="spec16">16(d) Sepcify other language</label>
+                <input type="text" id="spec16" onchange="writeFromText(this)"><br>
+
+                <label>(Percentages should add up to 100)</label><br><br>
+
+                <label>17 Estimate, in terms of hours per day, how often do you watch TV or listen to the radio in your native language or other languages per day</label><br><br>
+
+                <label id="lblnative17" for="native17">17(a) Native language </label>
+                <input type="text" id="native17" onchange="writeFromText(this)"><br>
+
+                <label id="lblsecond17" for="second17">17(b) Second language </label>
+                <input type="text" id="second17" onchange="writeFromText(this)"><br>
+
+                <label id="lblother17" for="other76">17(c) Other languages </label>
+                <input type="text" id="other17" onchange="writeFromText(this)"><br>
+
+                <label id="lblspec17" for="spec17">17(d) Sepcify other language</label>
+                <input type="text" id="spec17" onchange="writeFromText(this)"><br><br />
+
+                <label>18 Estimate, in terms of hours per day, how often do you read newspapers, magazines, and other general reading materials in your native language and other languages per day</label><br><br>
+
+                <label id="lblnative18" for="native18">18(a) Native language </label>
+                <input type="text" id="native18" onchange="writeFromText(this)"><br>
+
+                <label id="lblsecond18" for="second18">18(b) Second language </label>
+                <input type="text" id="second18" onchange="writeFromText(this)"><br>
+
+                <label id="lblother18" for="other18">18(c) Other languages </label>
+                <input type="text" id="other18" onchange="writeFromText(this)"><br>
+
+                <label id="lblspec18" for="spec17">18(d) Sepcify other language</label>
+                <input type="text" id="spec18" onchange="writeFromText(this)"><br><br />
+
+                <label>19 Estimate, in terms of hours per day, hjow oftyen you used your native language and other languages per day for work or study related activities (e.g. going to classes, writing papers, talking to colleagues, classmates, or peers)</label><br><br>
+
+                <label id="lblnative19" for="native19">19(a) Native language </label>
+                <input type="text" id="native19" onchange="writeFromText(this)"><br>
+
+                <label id="lblsecond19" for="second19">19(b) Second language </label>
+                <input type="text" id="second19" onchange="writeFromText(this)"><br>
+
+                <label id="lblother19" for="other19">19(c) Other languages </label>
+                <input type="text" id="other19" onchange="writeFromText(this)"><br>
+
+                <label id="lblspec19" for="spec19">19(d) Sepcify other language</label>
+                <input type="text" id="spec19" onchange="writeFromText(this)"><br><br />
+
+                <label>20 In which languages do you usually:</label><br><br>
+
+                <label id="lbladd20" for="add20">20(a) Add, multiply, and do simple arithmetic </label>
+                <input type="text" id="add20" onchange="writeFromText(this)"><br>
+
+                <label id="lbldream20" for="dream20">20(b) Dream </label>
+                <input type="text" id="dream20" onchange="writeFromText(this)"><br>
+
+                <label id="lblexpress20" for="express20">20(c) Express your anger or affection </label>
+                <input type="text" id="express20" onchange="writeFromText(this)"><br><br />
+
+                <label id="lblmixlang" for="mixlang">21 When you are speaking, do you ever mix words or sentences from the two or more languages you know?</label><br />
+                <label>(If not, skip to question to question 25) </label>
+                <input type="text" id="mixlang" required="true" onchange="writeFromText(this)"><br><br />
+                
+
+                <label>24 Among the languages you know, which language is the one that you would prefer to use in these situations?</label><br><br>
+
+                <label id="lblhome24" for="home24">24(a) At Home </label>
+                <input type="text" id="home24" onchange="writeFromText(this)"><br>
+
+                <label id="lblwork24" for="work24">24(b) At Work </label>
+                <input type="text" id="work24" onchange="writeFromText(this)"><br>
+
+                <label id="lblparty24" for="party24">24(c) At a party </label>
+                <input type="text" id="party24" onchange="writeFromText(this)"><br>
+
+                <label id="lblgeneral24" for="general24">24(d) In General </label>
+                <input type="text" id="general24" onchange="writeFromText(this)"><br><br />
+
+                <label id="lbllivedabroad" for="livedabroad">25 If you have lived or travelled in other countries for more than three months, please indicate the name(s) of the country(ies), length of stay, and language(s) you tried to learn</label><br />
+                <input type="text" id="livedabroad" required="true" onchange="writeFromText(this)"><br><br />
+
+                <label id="lblcommentz" for="commentz">28 If there is anything else that you fell is interesting or important about your language </label><label>background or language use, please comment below</label><br />
+                <input type="text" id="commentz" required="true" onchange="writeFromText(this)"><br><br />
+
+                <br>
+                
+            </form>
+
+            <input id="submitBtn" type="submit" value="Continue" onclick="goToC()"></input>
+
+        </font>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC7uT1yQKlDvIr0hL2_X9Er0fL5GYtUP5k",
+            authDomain: "language-test-feb11.firebaseapp.com",
+            databaseURL: "https://language-test-feb11.firebaseio.com",
+            storageBucket: "language-test-feb11.appspot.com",
+            messagingSenderId: "447859999500"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
+
+    <script src="../js/languageQuestionnaire.js"></script>
+    <link rel="stylesheet" href="../css/questionnaires.css" /> 
+
+</body>
+
+
+
+
+</html>

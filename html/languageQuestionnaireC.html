@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body onload="hideBlocks()">
+
+    <div>
+        <font size="5">
+            <h2>Language History Questionnaire:</h2>
+            <label><b>Part C</b></label><br><br/>
+        </font>
+        <font face="times new roman" size="4">
+
+            <form action="action_page.php">
+
+                
+
+                <label id="lbladditionalquestions" for="additionalquestions">29 Do you have additional questions you fell are not included?</label><br />
+                <label id="zzz" for="additionalquestions">If so, please enter your quesations and answers here</label><br />
+                <textarea id="additionalquestions" rows="4" cols="100" onchange="writeFromText(this)"></textarea>
+                <br>
+
+
+                <br>
+                
+            </form>
+
+            <input id="submitBtn" type="submit" value="Continue" onclick="goToD()"></input>
+
+        </font>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC7uT1yQKlDvIr0hL2_X9Er0fL5GYtUP5k",
+            authDomain: "language-test-feb11.firebaseapp.com",
+            databaseURL: "https://language-test-feb11.firebaseio.com",
+            storageBucket: "language-test-feb11.appspot.com",
+            messagingSenderId: "447859999500"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
+
+    <script src="../js/languageQuestionnaire.js"></script>
+    <link rel="stylesheet" href="../css/questionnaires.css" /> 
+
+</body>
+
+
+
+
+</html>
