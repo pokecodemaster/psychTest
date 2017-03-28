@@ -3,7 +3,7 @@ function submitParticipantDemographics() {
     
     
     var uKey = document.cookie;
-    uKey = uKey.substring(0, uKey.length-1);
+    //uKey = uKey.substring/*(0, uKey.length - 1)*/;
     
     var Age = document.getElementById("age").value;
     var Gender = document.getElementById("gender").value;

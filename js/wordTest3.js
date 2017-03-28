@@ -30,9 +30,9 @@ var s = new Date();
 var buffer = 0;
 
 var uKey = document.cookie;
-uKey = uKey.substring(0, uKey.length - 1);
+//uKey = uKey.substring/*(0, uKey.length - 1)*/;
 
-fireBaseRef.child(uKey).child("WordTest 3").set("");
+//fireBaseRef.child(uKey).child("WordTest 3").set("");
 function displayWord(sel) {
 
     if (allWords.length == 0) {

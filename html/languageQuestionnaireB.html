@@ -12,15 +12,15 @@
 
             <form action="action_page.php">
 
-                <label id="lblmotherHome" for="motherHome">11 What language do you usually speak to your mother at home?</label>
+                <label id="lblmotherHome" for="motherHome">11 What language do (or did) you usually speak to your mother at home?</label>
                 <input type="text" id="motherHome"  required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label id="lblfatherHome" for="fatherHome">12 What language do you sually speak to your father at home</label>
+                <label id="lblfatherHome" for="fatherHome">12 What language do you usually speak to your father at home</label>
                 <input type="text" id="fatherHome"  required="true" onchange="writeFromText(this)">
                 <br><br />
 
-                <label>13 What languages can your parents speak fluently?</label><br><br>
+                <label>13 What languages can (or could) your parents speak fluently?</label><br><br>
 
                 <label id="lblmother13" for="mother13">13(a) Mother</label>
                 <input type="text" id="mother13"  onchange="writeFromText(this)"><br>
@@ -28,7 +28,7 @@
                 <label id="lblfather13" for="father13">13(b) Father</label>
                 <input type="text" id="father13"  onchange="writeFromText(this)"><br>
 
-                <label id="lblparents14" for="parents14">14 What language do your parents usually speak to each other at home?</label>
+                <label id="lblparents14" for="parents14">14 What language do (or did) your parents usually speak to each other at home?</label>
                 <input type="text" id="parents14"  required="true" onchange="writeFromText(this)">
                 <br><br />
 
@@ -54,7 +54,7 @@
                 <label id="lblother16" for="other16">16(c) Other languages %</label>
                 <input type="text" id="other16" onchange="writeFromText(this)"><br>
 
-                <label id="lblspec16" for="spec16">16(d) Sepcify other language</label>
+                <label id="lblspec16" for="spec16">16(d) Specify other language</label>
                 <input type="text" id="spec16" onchange="writeFromText(this)"><br>
 
                 <label>(Percentages should add up to 100)</label><br><br>
@@ -70,7 +70,7 @@
                 <label id="lblother17" for="other76">17(c) Other languages </label>
                 <input type="text" id="other17" onchange="writeFromText(this)"><br>
 
-                <label id="lblspec17" for="spec17">17(d) Sepcify other language</label>
+                <label id="lblspec17" for="spec17">17(d) Specify other language</label>
                 <input type="text" id="spec17" onchange="writeFromText(this)"><br><br />
 
                 <label>18 Estimate, in terms of hours per day, how often do you read newspapers, magazines, and other general reading materials in your native language and other languages per day</label><br><br>
@@ -84,10 +84,10 @@
                 <label id="lblother18" for="other18">18(c) Other languages </label>
                 <input type="text" id="other18" onchange="writeFromText(this)"><br>
 
-                <label id="lblspec18" for="spec17">18(d) Sepcify other language</label>
+                <label id="lblspec18" for="spec17">18(d) Specify other language</label>
                 <input type="text" id="spec18" onchange="writeFromText(this)"><br><br />
 
-                <label>19 Estimate, in terms of hours per day, hjow oftyen you used your native language and other languages per day for work or study related activities (e.g. going to classes, writing papers, talking to colleagues, classmates, or peers)</label><br><br>
+                <label>19 Estimate, in terms of hours per day, how oftyen you used your native language and other languages per day for work or study related activities (e.g. going to classes, writing papers, talking to colleagues, classmates, or peers)</label><br><br>
 
                 <label id="lblnative19" for="native19">19(a) Native language </label>
                 <input type="text" id="native19" onchange="writeFromText(this)"><br>
@@ -98,7 +98,7 @@
                 <label id="lblother19" for="other19">19(c) Other languages </label>
                 <input type="text" id="other19" onchange="writeFromText(this)"><br>
 
-                <label id="lblspec19" for="spec19">19(d) Sepcify other language</label>
+                <label id="lblspec19" for="spec19">19(d) Specify other language</label>
                 <input type="text" id="spec19" onchange="writeFromText(this)"><br><br />
 
                 <label>20 In which languages do you usually:</label><br><br>
@@ -115,6 +115,69 @@
                 <label id="lblmixlang" for="mixlang">21 When you are speaking, do you ever mix words or sentences from the two or more languages you know?</label><br />
                 <label>(If not, skip to question to question 25) </label>
                 <input type="text" id="mixlang" required="true" onchange="writeFromText(this)"><br><br />
+
+                <label >22 List the languages that you mix and rate the frequency of mixing in normal conversation with the following people, on a scale from 1 (Very Rare) to 5 (Very Frequent)</label><br /><br />
+                <table id="mixTable22" style="width:100%">
+                    <thead>
+                        <tr id="titleRow">
+                            <th>Relationship</th>
+                            <th>Languages Mixed</th>
+                            <th>Frequency of Mixing</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="rows1">
+                            <td>Spouse/family memebers</td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr id="rows2">
+                            <td>Friends</td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr id="rows3">
+                            <td>Co-workers</td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br /><br />
+
+                <label>23 When you are speaking, do you ever mix words or sentences from the two or more languages you know?</label><br /><br />
+                <table id=" " style="width:100%">
+                    <thead>
+                        <tr id="titleRow">
+                            <th></th>
+                            <th>At home</th>
+                            <th>At work</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="rows1">
+                            <td>Reading</td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr id="rows2">
+                            <td>Writing</td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr id="rows3">
+                            <td>Speaking</td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr id="rows4">
+                            <td>Understanding</td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br /><br />
                 
 
                 <label>24 Among the languages you know, which language is the one that you would prefer to use in these situations?</label><br><br>
@@ -134,8 +197,37 @@
                 <label id="lbllivedabroad" for="livedabroad">25 If you have lived or travelled in other countries for more than three months, please indicate the name(s) of the country(ies), length of stay, and language(s) you tried to learn</label><br />
                 <input type="text" id="livedabroad" required="true" onchange="writeFromText(this)"><br><br />
 
-                <label id="lblcommentz" for="commentz">28 If there is anything else that you fell is interesting or important about your language </label><label>background or language use, please comment below</label><br />
-                <input type="text" id="commentz" required="true" onchange="writeFromText(this)"><br><br />
+                <label>26 If you have taken a standardized test of proficiency for languages other than your native language (e.g. TOEFL or Tesr of English as a Foreign Language), please indicate the scores you received for each</label><br /><br />
+                <table id=" " style="width:100%">
+                    <thead>
+                        <tr id="titleRow">
+                            <th>Language</th>
+                            <th>Scores</th>
+                            <th>Name of Test</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="rows1">
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr id="rows2">
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        <tr id="rows3">
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                        </tr>
+                        </tr>
+                    </tbody>
+                </table>
+                <br /><br />
+
+                
 
                 <br>
                 

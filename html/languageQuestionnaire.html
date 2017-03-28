@@ -15,16 +15,11 @@
                 <input type="text" id="education" name="Education" required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label id="lblcountryOrigin" for="countryOrigin">-2(a) Country of Origin:</label>
+                <label id="lblcountryOrigin" for="countryOrigin">-2 Country of Origin:</label>
                 <input type="text" id="countryOrigin" name="CountryOrigin" required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label id="lblcountryResidence" for="countryResidence">-2(b) Country of Residence:</label>
-                <input type="text" id="countryResidence" name="CountryResidence" required="true" onchange="writeFromText(this)">
-                <br>
-
-
-                <label for="q5A" id="lblq5A">-3 How long have you lived in the country of your current residence?</label>
+                <label for="q5A" id="lblq5A">-3 How long have you lived in the US?</label>
                 <input type="text" id="q5A" name="Q5A" required="true" onchange="writeFromText(this)">
                 <br>
 
@@ -51,7 +46,7 @@
                     <label id="lblschool6" for="home6">-6(b) In School:</label>
                     <input type="text" id="school6" name="School" onchange="writeFromText(this)"><br>
 
-                    <label id="lblafter6" for="after6">-6(c) After arriving in the second language speaking country</label><br>
+                    <label id="lblafter6" for="after6">-6(c) After arriving in the second language speaking country</label><label>(if applicable)</label><br>
                     <input type="text" id="after6" name="School" onchange="writeFromText(this)"><br><br />
 
                     <label>7 How did you learn your second language up to this point (write "Yes" in all that apply, otherwise leave blank)</label><br><br>
@@ -68,122 +63,134 @@
                     <label id="lblother7" for="other7">-7(d) Other (specify)</label><br>
                     <input type="text" id="other7" name="School" onchange="writeFromText(this)"><br>
 
-                    <label id="lblLangTable">-8 List all Foreign Languages you know </label><label>in order of most proficient to leastr proficient. Rate your ability on the following aspects in each language.</label><br>
+                    <label id="lblLangTable">-8 List all Foreign Languages you know </label><label>in order of most proficient to least proficient. Rate your ability on the following aspects in each language.</label><br>
                     <label>Please rate according to the following scale (write down the number in the table):</label><br>
-                    <label>very poor=1, poor=2, fair=3, functional=4, good=5, very good=6, native-like=7</label><br /><br />
+                    <label>very poor=1, poor=2, fair=3, functional=4, good=5, very good=6, native-like=7</label><br />
+                    <label>(Note: if not applicable=, enter "0" in the first Language cell)</label><br /><br />
 
                     <table id="langTable" style="width:100%">
-                        <tr>
-                            <th>Language</th>
-                            <th>Reading Proficiency</th>
-                            <th>Writing Proficiency</th>
-                            <th>Speaking Proficiency</th>
-                            <th>Listening Proficiency</th>
-                        </tr>
-
-                        <tr>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                        </tr>
+                        <thead>
+                            <tr id="titleRow">
+                                <th>Language</th>
+                                <th>Reading Proficiency</th>
+                                <th>Writing Proficiency</th>
+                                <th>Speaking Proficiency</th>
+                                <th>Listening Proficiency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="row1">
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                            </tr>
+                            <tr id="row2">
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                            </tr>
+                            <tr id="row3">
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                            </tr>
+                            <tr id="row4">
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                            </tr>
+                        </tbody>
                     </table>
                     <br /><br />
 
-                    <label id="lblLangTable">-9 Provide and age at which you were first exposed </label><label>to each language in terms of speaking, reading, and writing, and the number of years you have spend on learning each language</label><br>
+                    <label id="lblLangTable">-9 Provide an age at which you were first exposed </label><label>to each language in terms of speaking, reading, and writing, and the number of years you have spend on learning each language</label><br>
+                    <label>(Note: if not applicable=, enter "0" in the first Language cell)</label><br /><br />
                     <br />
-                    <table id="langTable" style="width:100%">
-                        <tr>
-                            <th>Language</th>
-                            <th>Speaking</th>
-                            <th>Reading</th>
-                            <th>Writing</th>
-                            <th>Number of years learning</th>
-                        </tr>
-
-                        <tr>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                        </tr>
+                    <table id="langTable9" style="width:100%">
+                        <thead>
+                            <tr id="titleRow">
+                                <th>Language</th>
+                                <th>Speaking</th>
+                                <th>Reading</th>
+                                <th>Writing</th>
+                                <th>Number of Years Learning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="row1">
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                            </tr>
+                            <tr id="row2">
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                            </tr>
+                            <tr id="row3">
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                            </tr>
+                            <tr id="row4">
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                            </tr>
+                        </tbody>
                     </table>
                     <br /><br />
 
                     <label id="lblLangTable">-10 Do you have a foreign accent </label><label>in the languages you speak?</label><br>
-                    <label>If so, please rate the strength of your accent on a scale from 1 (not much) to 7 (very strong accent)</label><br><br />
+                    <label>If so, please rate the strength of your accent on a scale from 1 (not much) to 7 (very strong accent)</label><br>
+                    <label>(Note: if not applicable=, enter "0" in the first Language cell)</label><br /><br />
 
-                    <table id="langTable" style="width:100%">
-                        <tr>
-                            <th>Language</th>
-                            <th>Accent (write "yes" or "no")</th>
-                            <th>Strength</th>
-                        </tr>
-
-                        <tr>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                            <td><div contenteditable></div></td>
-                        </tr>
+                    <table id="langTable10" style="width:100%">
+                        <thead>
+                            <tr id="titleRow">
+                                <th>Language</th>
+                                <th>Acent (enter "yes" or "no")</th>
+                                <th>Strength</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="rows1">
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                            </tr>
+                            <tr id="rows2">
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                            </tr>
+                            <tr id="rows3">
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                            </tr>
+                            <tr id="rows4">
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                                <td><div contenteditable></div></td>
+                            </tr>
+                        </tbody>
                     </table>
                     <br /><br />
 
