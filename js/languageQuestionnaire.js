@@ -41,88 +41,81 @@ function showQuestion3() {
     fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child(question).set(answer);
 }*/
 
-function table8ToJson(idStr) {
+function tableToJson5(idStr) {
     var table = document.getElementById(idStr);
+    var question = document.getElementById("lbl" + idStr).textContent;
+    var concatVal = question + "\n";
+
+    var title1 = table.rows[0].cells[1].innerHTML;
+    var title2 = table.rows[0].cells[2].innerHTML;
+    var title3 = table.rows[0].cells[3].innerHTML;
+    var title4 = table.rows[0].cells[4].innerHTML;
 
     for (var i = 1; i < table.rows.length; i++) {
-        var idName = "row" + i;
+        var idName = idStr + "row" + i;
         var Row = document.getElementById(idName);
         var Cells = Row.getElementsByTagName("td");
 
-        var langName = parseOutput(Cells[0].innerHTML);
-        var readingVal = parseOutput(Cells[1].innerHTML);
-        var writingVal = parseOutput(Cells[2].innerHTML);
-        var speakingVal = parseOutput(Cells[3].innerHTML);
-        var listeningVal = parseOutput(Cells[4].innerHTML);
+        var langName = parseStr(Cells[0].innerHTML);
+        var cellVal1 = parseStr(Cells[1].innerHTML);
+        var cellVal2 = parseStr(Cells[2].innerHTML);
+        var cellVal3 = parseStr(Cells[3].innerHTML);
+        var cellVal4 = parseStr(Cells[4].innerHTML);
 
         if (langName.length > 0) {
-            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child("-8 Languages known").child(langName).child("Reading").set(readingVal);
-            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child("-8 Languages known").child(langName).child("Writing").set(writingVal);
-            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child("-8 Languages known").child(langName).child("Speaking").set(speakingVal);
-            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child("-8 Languages known").child(langName).child("Listening").set(listeningVal);
+            concatVal = concatVal + langName + ":\n" + title1 + ": " + cellVal1 + "\n" + title2 + ": " + cellVal2 + "\n" + title3 + ": " + cellVal3 + "\n" + title4 + ": " + cellVal4 + "\n\n";
+            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child(question).child(langName).child(title1).set(cellVal1);
+            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child(question).child(langName).child(title2).set(cellVal2);
+            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child(question).child(langName).child(title3).set(cellVal3);
+            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child(question).child(langName).child(title4).set(cellVal4);
         }
-
 
     }
 
-    //alert(concatVal);
+    alert(concatVal + "\n\n");
 }
 
-function table9ToJson(idStr) {
+function tableToJson3(idStr) {
     var table = document.getElementById(idStr);
+    var question = document.getElementById("lbl" + idStr).textContent;
+    var concatVal = question + "\n";
+
+    var title1 = table.rows[0].cells[1].innerHTML;
+    var title2 = table.rows[0].cells[2].innerHTML;
 
     for (var i = 1; i < table.rows.length; i++) {
-        var idName = "row" + i;
+        var idName = idStr + "row" + i;
         var Row = document.getElementById(idName);
         var Cells = Row.getElementsByTagName("td");
 
-        var langName = parseOutput(Cells[0].innerHTML);
-        var speakingVal = parseOutput(Cells[1].innerHTML);
-        var readingVal = parseOutput(Cells[2].innerHTML);
-        var writingVal = parseOutput(Cells[3].innerHTML);
-        var numOfYears = parseOutput(Cells[4].innerHTML);
+        var langName = parseStr(Cells[0].innerHTML);
+        var cellVal1 = parseStr(Cells[1].innerHTML);
+        var cellVal2 = parseStr(Cells[2].innerHTML);
 
         if (langName.length > 0) {
-            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child("-9 Language Exposure").child(langName).child("Reading").set(readingVal);
-            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child("-9 Language Exposure").child(langName).child("Writing").set(writingVal);
-            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child("-9 Language Exposure").child(langName).child("Speaking").set(speakingVal);
-            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child("-9 Language Exposure").child(langName).child("Listening").set(numOfYears);
+            concatVal = concatVal + langName + ":\n" + title1 + ": " + cellVal1 + "\n" + title2 + ": " + cellVal2 + "\n\n";
+            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child(question).child(langName).child(title1).set(cellVal1);
+            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child(question).child(langName).child(title2).set(cellVal2);
         }
-
 
     }
 
-    //alert(concatVal);
+    alert(concatVal + "\n\n");
 }
 
-function table10ToJson(idStr) {
-    var table = document.getElementById(idStr);
+function parseStr(strIn) {
 
-    for (var i = 1; i < table.rows.length; i++) {
-        var idName = "rows" + i;
-        var Row = document.getElementById(idName);
-        var Cells = Row.getElementsByTagName("td");
-
-        var langName = parseOutput(Cells[0].innerHTML);
-        var accentVal = parseOutput(Cells[1].innerHTML);
-        var strengthVal = parseOutput(Cells[2].innerHTML);
-
-        if (langName.length > 0) {
-            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child("-10 Accent Strength").child(langName).child("Accent").set(accentVal);
-            fireBaseRef.child("Participants Data").child(uKey).child("Language History Questionnaire").child("-10 Accent Strength").child(langName).child("Strength").set(strengthVal);
-        }
-
+    if (strIn.length > 20) {
+        strIn = strIn.substr(24);
+        strIn = strIn.replace("</div>", "");
+        strIn = strIn.replace("<br", "");
+        strIn = strIn.replace(">", "");
 
     }
 
-    //alert(concatVal);
+    return strIn;
 }
 
-function parseOutput(str) {
-    var parsStr = str.substr(24);
-    parsStr = parsStr.replace("</div>", "");
-    return parsStr;
-}
 
 function setVisible(elem) {
 
@@ -148,9 +141,9 @@ function goTo() {
 
     var isDone = document.getElementById("yesx").value;
 
-    table8ToJson('langTable');
-    table9ToJson('langTable9');
-    table10ToJson('langTable10');
+    tableToJson5('table8');
+    tableToJson5('table9');
+    tableToJson3('table10');
 
     if (isDone.length > 0) {
         //partB
@@ -164,6 +157,11 @@ function goTo() {
 }
 
 function goToC() {
+
+    tableToJson3('table22');
+    tableToJson3('table23');
+    tableToJson3('table26');
+
     window.location = "../html/debriefing.html";
 
 }

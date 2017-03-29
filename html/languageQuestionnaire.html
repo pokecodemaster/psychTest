@@ -23,7 +23,7 @@
                 <input type="text" id="q5A" name="Q5A" required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label id="lblnativeLang" for="nativeLang">-4 What is your native language? (if you grew up with more than one language, please specify)</label>
+                <label id="lblnativeLang" for="nativeLang">-4 What is your first language? (if you grew up with more than one language, please specify)</label>
                 <input type="text" id="nativeLang" name="NativeLang" required="true" onchange="writeFromText(this)">
                 <br>
 
@@ -46,7 +46,7 @@
                     <label id="lblschool6" for="home6">-6(b) In School:</label>
                     <input type="text" id="school6" name="School" onchange="writeFromText(this)"><br>
 
-                    <label id="lblafter6" for="after6">-6(c) After arriving in the second language speaking country</label><label>(if applicable)</label><br>
+                    <label id="lblafter6" for="after6">-6(c) After arriving in the second language speaking country</label><label> (if applicable)</label><br>
                     <input type="text" id="after6" name="School" onchange="writeFromText(this)"><br><br />
 
                     <label>7 How did you learn your second language up to this point (write "Yes" in all that apply, otherwise leave blank)</label><br><br>
@@ -63,44 +63,44 @@
                     <label id="lblother7" for="other7">-7(d) Other (specify)</label><br>
                     <input type="text" id="other7" name="School" onchange="writeFromText(this)"><br>
 
-                    <label id="lblLangTable">-8 List all Foreign Languages you know </label><label>in order of most proficient to least proficient. Rate your ability on the following aspects in each language.</label><br>
-                    <label>Please rate according to the following scale (write down the number in the table):</label><br>
-                    <label>very poor=1, poor=2, fair=3, functional=4, good=5, very good=6, native-like=7</label><br />
-                    <label>(Note: if not applicable=, enter "0" in the first Language cell)</label><br /><br />
-
-                    <table id="langTable" style="width:100%">
+                    <label id="lbltable8">-8 List all the foreign languages you know</label>
+                    <label> in order of proficient to least proficient.</label><br>
+                    <label>Rate your ability on the following aspects in each language. Please rate according to the following scale (write down the number in the table):</label>
+                    <label>very poor=1        poor=2 fair=3    functional=4       good=5 very good=6       native-like=7</label>
+                    <label>(Click each table cell to enter your response)</label>
+                    <table id='table8'>
                         <thead>
-                            <tr id="titleRow">
+                            <tr id="table8titleRow">
                                 <th>Language</th>
                                 <th>Reading Proficiency</th>
                                 <th>Writing Proficiency</th>
                                 <th>Speaking Proficiency</th>
-                                <th>Listening Proficiency</th>
+                                <th>Listening Ability</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr id="row1">
+                            <tr id="table8row1">
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                             </tr>
-                            <tr id="row2">
+                            <tr id="table8row2">
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                             </tr>
-                            <tr id="row3">
+                            <tr id="table8row3">
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                             </tr>
-                            <tr id="row4">
+                            <tr id="table8row4">
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
@@ -109,44 +109,43 @@
                             </tr>
                         </tbody>
                     </table>
-                    <br /><br />
+                    <br><br>
 
-                    <label id="lblLangTable">-9 Provide an age at which you were first exposed </label><label>to each language in terms of speaking, reading, and writing, and the number of years you have spend on learning each language</label><br>
-                    <label>(Note: if not applicable=, enter "0" in the first Language cell)</label><br /><br />
-                    <br />
-                    <table id="langTable9" style="width:100%">
+                    <label id="lbltable9">-9 Provide an age at which you were first exposed to each foreign language</label>
+                    <label> in terms of speaking, reading, and writing, and the number of years you have spent on learning each language.</label><br>
+                    <table id='table9'>
                         <thead>
-                            <tr id="titleRow">
+                            <tr id="table9titleRow">
                                 <th>Language</th>
                                 <th>Speaking</th>
                                 <th>Reading</th>
                                 <th>Writing</th>
-                                <th>Number of Years Learning</th>
+                                <th>Numbers of Years Learning</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr id="row1">
+                            <tr id="table9row1">
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                             </tr>
-                            <tr id="row2">
+                            <tr id="table9row2">
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                             </tr>
-                            <tr id="row3">
+                            <tr id="table9row3">
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                             </tr>
-                            <tr id="row4">
+                            <tr id="table9row4">
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
@@ -155,44 +154,42 @@
                             </tr>
                         </tbody>
                     </table>
-                    <br /><br />
+                    <br><br>
 
-                    <label id="lblLangTable">-10 Do you have a foreign accent </label><label>in the languages you speak?</label><br>
-                    <label>If so, please rate the strength of your accent on a scale from 1 (not much) to 7 (very strong accent)</label><br>
-                    <label>(Note: if not applicable=, enter "0" in the first Language cell)</label><br /><br />
-
-                    <table id="langTable10" style="width:100%">
+                    <label id="lbltable10">-10 Do you have a foreign accent</label>
+                    <label> in the languages you speak? If so, please rate the strength of your accent on a sale from 1 (not much of an accent) to 7 (very strong accent).</label><br>
+                    <table id='table10'>
                         <thead>
-                            <tr id="titleRow">
+                            <tr id="table10titleRow">
                                 <th>Language</th>
-                                <th>Acent (enter "yes" or "no")</th>
+                                <th>Acent (Enter "Yes" or "No")</th>
                                 <th>Strength</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr id="rows1">
+                            <tr id="table10row1">
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                             </tr>
-                            <tr id="rows2">
+                            <tr id="table10row2">
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                             </tr>
-                            <tr id="rows3">
+                            <tr id="table10row3">
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                             </tr>
-                            <tr id="rows4">
+                            <tr id="table10row4">
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                                 <td><div contenteditable></div></td>
                             </tr>
                         </tbody>
                     </table>
-                    <br /><br />
+                    <br><br>
 
                 </div>
                 <div id="no">

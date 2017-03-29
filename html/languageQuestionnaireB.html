@@ -6,7 +6,6 @@
         <font size="5">
             <h2>Language History Questionnaire:</h2>
             <label><b>Part B</b></label><br><br/>
-            <label>Note: if any question is not applicable for any reason, write N/A (do not leave blank)</label><br><br>
         </font>
         <font face="times new roman" size="4">
 
@@ -16,7 +15,7 @@
                 <input type="text" id="motherHome"  required="true" onchange="writeFromText(this)">
                 <br>
 
-                <label id="lblfatherHome" for="fatherHome">12 What language do you usually speak to your father at home</label>
+                <label id="lblfatherHome" for="fatherHome">12 What language do you usually speak to your father at home?</label>
                 <input type="text" id="fatherHome"  required="true" onchange="writeFromText(this)">
                 <br><br />
 
@@ -43,9 +42,9 @@
                 <label id="lblcollege15" for="college15">15(c) College-University</label>
                 <input type="text" id="college15" onchange="writeFromText(this)"><br><br />
 
-                <label>16 Estimate, in terms of percentages, how often do you use your native language and other languages per day (in all activities combined)</label><br><br><br />
+                <label>16 Estimate, in terms of percentages, how often do you use your first language and other languages per day (in all activities combined)</label><br><br><br />
 
-                <label id="lblnative16" for="native16">16(a) Native language %</label>
+                <label id="lblnative16" for="native16">16(a) First language %</label>
                 <input type="text" id="native16" onchange="writeFromText(this)"><br>
 
                 <label id="lblsecond16" for="second16">16(b) Second language %</label>
@@ -59,9 +58,9 @@
 
                 <label>(Percentages should add up to 100)</label><br><br>
 
-                <label>17 Estimate, in terms of hours per day, how often do you watch TV or listen to the radio in your native language or other languages per day</label><br><br>
+                <label>17 Estimate, in terms of hours per day, how often do you watch TV or listen to the radio in your first language or other languages per day</label><br><br>
 
-                <label id="lblnative17" for="native17">17(a) Native language </label>
+                <label id="lblnative17" for="native17">17(a) First language </label>
                 <input type="text" id="native17" onchange="writeFromText(this)"><br>
 
                 <label id="lblsecond17" for="second17">17(b) Second language </label>
@@ -73,9 +72,9 @@
                 <label id="lblspec17" for="spec17">17(d) Specify other language</label>
                 <input type="text" id="spec17" onchange="writeFromText(this)"><br><br />
 
-                <label>18 Estimate, in terms of hours per day, how often do you read newspapers, magazines, and other general reading materials in your native language and other languages per day</label><br><br>
+                <label>18 Estimate, in terms of hours per day, how often do you read newspapers, magazines, and other general reading materials in your first language and other languages per day</label><br><br>
 
-                <label id="lblnative18" for="native18">18(a) Native language </label>
+                <label id="lblnative18" for="native18">18(a) First language </label>
                 <input type="text" id="native18" onchange="writeFromText(this)"><br>
 
                 <label id="lblsecond18" for="second18">18(b) Second language </label>
@@ -87,9 +86,9 @@
                 <label id="lblspec18" for="spec17">18(d) Specify other language</label>
                 <input type="text" id="spec18" onchange="writeFromText(this)"><br><br />
 
-                <label>19 Estimate, in terms of hours per day, how oftyen you used your native language and other languages per day for work or study related activities (e.g. going to classes, writing papers, talking to colleagues, classmates, or peers)</label><br><br>
+                <label>19 Estimate, in terms of hours per day, how often you used your first language and other languages per day for work or study related activities (e.g. going to classes, writing papers, talking to colleagues, classmates, or peers)</label><br><br>
 
-                <label id="lblnative19" for="native19">19(a) Native language </label>
+                <label id="lblnative19" for="native19">19(a) First language </label>
                 <input type="text" id="native19" onchange="writeFromText(this)"><br>
 
                 <label id="lblsecond19" for="second19">19(b) Second language </label>
@@ -116,68 +115,70 @@
                 <label>(If not, skip to question to question 25) </label>
                 <input type="text" id="mixlang" required="true" onchange="writeFromText(this)"><br><br />
 
-                <label >22 List the languages that you mix and rate the frequency of mixing in normal conversation with the following people, on a scale from 1 (Very Rare) to 5 (Very Frequent)</label><br /><br />
-                <table id="mixTable22" style="width:100%">
+                <label id="lbltable22">-22 List the languages that you mix</label>
+                <label> (separated by commas) and rate the frequency of mixing in normal conversation with the following people, on a scale from 1 (mixing is very rare) to 5 (mixing is very frequent). Write down the number in the box. </label><br>
+                <table id='table22'>
                     <thead>
-                        <tr id="titleRow">
+                        <tr id="table22titleRow">
                             <th>Relationship</th>
                             <th>Languages Mixed</th>
-                            <th>Frequency of Mixing</th>
+                            <th>Frequency</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr id="rows1">
-                            <td>Spouse/family memebers</td>
+                        <tr id="table22row1">
+                            <td>Spouse</td>
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                         </tr>
-                        <tr id="rows2">
+                        <tr id="table22row2">
                             <td>Friends</td>
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                         </tr>
-                        <tr id="rows3">
-                            <td>Co-workers</td>
+                        <tr id="table22row3">
+                            <td>Coworkers</td>
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                         </tr>
                     </tbody>
                 </table>
-                <br /><br />
+                <br><br>
 
-                <label>23 When you are speaking, do you ever mix words or sentences from the two or more languages you know?</label><br /><br />
-                <table id=" " style="width:100%">
+                <label id="lbltable23">-23 In which language do you feel you usually do better?</label>
+                <label> (among your best two languages). Write the name of the language under each condition.</label><br>
+                <table id='table23'>
                     <thead>
-                        <tr id="titleRow">
+                        <tr id="table23titleRow">
                             <th></th>
-                            <th>At home</th>
-                            <th>At work</th>
+                            <th>At Home</th>
+                            <th>At Work</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr id="rows1">
+                        <tr id="table23row1">
                             <td>Reading</td>
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                         </tr>
-                        <tr id="rows2">
+                        <tr id="table23row2">
                             <td>Writing</td>
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                         </tr>
-                        <tr id="rows3">
+                        <tr id="table23row3">
                             <td>Speaking</td>
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                         </tr>
-                        <tr id="rows4">
+                        <tr id="table23row4">
                             <td>Understanding</td>
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                         </tr>
                     </tbody>
                 </table>
-                <br /><br />
+                <br><br>
                 
 
                 <label>24 Among the languages you know, which language is the one that you would prefer to use in these situations?</label><br><br>
@@ -197,35 +198,40 @@
                 <label id="lbllivedabroad" for="livedabroad">25 If you have lived or travelled in other countries for more than three months, please indicate the name(s) of the country(ies), length of stay, and language(s) you tried to learn</label><br />
                 <input type="text" id="livedabroad" required="true" onchange="writeFromText(this)"><br><br />
 
-                <label>26 If you have taken a standardized test of proficiency for languages other than your native language (e.g. TOEFL or Tesr of English as a Foreign Language), please indicate the scores you received for each</label><br /><br />
-                <table id=" " style="width:100%">
+                <label id="lbltable26">-26 If you have taken a standardized test</label>
+                <label> of proficiency for languages other than your first language (e.g. TOEFL or Test of English as a Foreign Language), please indicate the scores you received for each.</label><br>
+                <table id='table26'>
                     <thead>
-                        <tr id="titleRow">
+                        <tr id="table26titleRow">
                             <th>Language</th>
-                            <th>Scores</th>
+                            <th>Score</th>
                             <th>Name of Test</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr id="rows1">
+                        <tr id="table26row1">
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                         </tr>
-                        <tr id="rows2">
+                        <tr id="table26row2">
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                         </tr>
-                        <tr id="rows3">
+                        <tr id="table26row3">
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                             <td><div contenteditable></div></td>
                         </tr>
+                        <tr id="table26row4">
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
+                            <td><div contenteditable></div></td>
                         </tr>
                     </tbody>
                 </table>
-                <br /><br />
+                <br><br>
 
                 
 

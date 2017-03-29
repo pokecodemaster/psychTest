@@ -42,6 +42,7 @@ function startTest() {
 
 
 function displayWord() {
+    document.getElementById("dispMessage").innerHTML = "";
     if (index > 0) {
         var randColor = colors[Math.floor(Math.random() * colors.length)];
         var randWord = words[Math.floor(Math.random() * words.length)];
