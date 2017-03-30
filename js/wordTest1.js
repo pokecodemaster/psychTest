@@ -77,9 +77,9 @@ function writeToDB(currWord, selColor, randColor) {
     var status = "INCORRECT";
 
     var d = new Date();
-    var t = Math.round(Math.abs(d - s) / 1000);
+    var t = Math.round(Math.abs(d - s));
     var time = "";
-    time = parseTime(Math.abs(t - buffer));
+    time = Math.abs(t - buffer);//parseTime(Math.abs(t - buffer));
     buffer = t;
     //alert(time);
 
@@ -90,7 +90,7 @@ function writeToDB(currWord, selColor, randColor) {
         fireBaseRef.child("Participants Data").child(uKey).child("WordTest 1").child(currWord.toUpperCase()).child("Displayed In").set(selColor);
         fireBaseRef.child("Participants Data").child(uKey).child("WordTest 1").child(currWord.toUpperCase()).child("Selected").set(randColor);
         fireBaseRef.child("Participants Data").child(uKey).child("WordTest 1").child(currWord.toUpperCase()).child("Status").set(status);
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 1").child(currWord.toUpperCase()).child("Time").set(time);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 1").child(currWord.toUpperCase()).child("Time").set(time + " ms");
     }
     
 }
@@ -134,7 +134,7 @@ function parseTime(t, idVal) {
         }
 
     }
-    document.getElementById("timer").innerHTML = x
+    //document.getElementById("timer").innerHTML = x
     return x;
 }
 

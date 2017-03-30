@@ -6,8 +6,8 @@ var Name = document.getElementById("fullName");
 
 var fireBaseRef = firebase.database().ref();
 
-var spanish2 = ["barril", "mesa", "sueño", "acuerdo", "recompensa", "suicidio", "dolor", "eyacular", "verga", "chocha", ];
-var english2 = ["barrel", "table", "dream", "agreement", "reward", "suicide", "pain", "ejaculate", "dick", "pussy"];
+var spanish4 = ["habitante", "mermelada", "unidad", "afecto", "suave", "muerte", "pena", "pendejo", "mear", "pene", ];
+var english4 = ["inhabitant", "jelly", "unit", "affection", "soft", "death", "grief", "ashole", "piss", "penis"];
 
 var allWords = new Array();
 
@@ -32,23 +32,23 @@ var buffer = 0;
 var uKey = document.cookie;
 //uKey = uKey.substring/*(0, uKey.length - 1)*/;
 
-//fireBaseRef.child(uKey).child("WordTest 2").set("");
+//fireBaseRef.child(uKey).child("WordTest 1").set("");
 function displayWord(sel) {
 
     if (allWords.length == 0) {
 
-        if (uKey[uKey.length - 1] % 2 == 1) {
-            allWords = shuffle(spanish2);
+        if (uKey[uKey.length - 1] % 2 == 0) {
+            allWords = shuffle(spanish4);
             allWords.push("...");
         }
         else {
-            allWords = shuffle(english2);
+            allWords = shuffle(english4);
             allWords.push("...");
         }
 
     }
 
-
+    
     document.getElementById("dispMessage").innerHTML = "";
     var randColor = colors[Math.floor(Math.random() * colors.length)];
 
@@ -57,7 +57,7 @@ function displayWord(sel) {
     selectedWords.push(currWord);
     selectedColors.push(randColor);
 
-
+    
 
     if (index <= 10) {
         document.getElementById("demo").style.color = randColor;
@@ -66,10 +66,10 @@ function displayWord(sel) {
     }
     else {
         //change this
-        window.location.href = 'continueTest.3.html';
+        window.location.href = 'continueTest.6.html';
     }
     index++;
-
+    
 
 }
 
@@ -79,7 +79,7 @@ function writeToDB(currWord, selColor, randColor) {
     var d = new Date();
     var t = Math.round(Math.abs(d - s));
     var time = "";
-    time = Math.abs(t - buffer);//parseTime(Math.abs(t - buffer));
+    time = Math.abs(t-buffer);//parseTime(Math.abs(t - buffer));
     buffer = t;
     //alert(time);
 
@@ -87,12 +87,12 @@ function writeToDB(currWord, selColor, randColor) {
         if (selColor == randColor) {
             status = "CORRECT";
         }
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 2").child(currWord.toUpperCase()).child("Displayed In").set(selColor);
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 2").child(currWord.toUpperCase()).child("Selected").set(randColor);
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 2").child(currWord.toUpperCase()).child("Status").set(status);
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 2").child(currWord.toUpperCase()).child("Time").set(time + " ms");
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 5").child(currWord.toUpperCase()).child("Displayed In").set(selColor);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 5").child(currWord.toUpperCase()).child("Selected").set(randColor);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 5").child(currWord.toUpperCase()).child("Status").set(status);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 5").child(currWord.toUpperCase()).child("Time").set(time + " ms");
     }
-
+    
 }
 
 function myTimer() {
@@ -134,7 +134,7 @@ function parseTime(t, idVal) {
         }
 
     }
-   // document.getElementById("timer").innerHTML = x
+    //document.getElementById("timer").innerHTML = x
     return x;
 }
 
@@ -148,3 +148,23 @@ function shuffle(a) {
     }
     return a;
 }
+
+/*
+var spanish1 = ["olla", "calle", "paz", "goce", "florecer", "violación", "molestia", "vómito", "escroto", "bastardo",];
+var english1 = ["kettle", "street", "peace", "enjoyment", "blossom", "rape", "ache", "vomit", "scrotum", "bastard"];
+
+
+var spanish2 = ["barril", "mesa", "sueño", "acuerdo", "recompensa", "suicidio", "dolor", "eyacular", "verga", "chocha",];
+var english2 = ["barrel", "table", "dream", "agreement", "reward", "suicide", "pain", "ejaculate", "dick", "pussy"];
+
+
+var spanish3 = ["tela", "tiempo", "noticias", "vacación", "dicha", "tortura", "soledad", "matanza", "coger", "mierda",];
+var english3 = ["fabric", "time", "noticias", "holiday", "bliss", "torture", "loneliness", "slaughter", "fuck", "shit"];
+
+
+var spanish4 = ["habitante", "mermelada", "unidad", "afecto", "suave", "muerte", "pena", "pendejo", "mear", "pene",];
+var english4 = ["inhabitant", "jelly", "unit", "affection", "soft", "death", "grief", "asshole", "piss", "penis"];
+*/
+ 
+ 
+ 

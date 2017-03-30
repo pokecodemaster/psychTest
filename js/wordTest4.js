@@ -6,8 +6,8 @@ var Name = document.getElementById("fullName");
 
 var fireBaseRef = firebase.database().ref();
 
-var spanish2 = ["barril", "mesa", "sueño", "acuerdo", "recompensa", "suicidio", "dolor", "eyacular", "verga", "chocha", ];
-var english2 = ["barrel", "table", "dream", "agreement", "reward", "suicide", "pain", "ejaculate", "dick", "pussy"];
+var spanish4 = ["habitante", "mermelada", "unidad", "afecto", "suave", "muerte", "pena", "pendejo", "mear", "pene", ];
+var english4 = ["inhabitant", "jelly", "unit", "affection", "soft", "death", "grief", "ashole", "piss", "penis"];
 
 var allWords = new Array();
 
@@ -38,11 +38,11 @@ function displayWord(sel) {
     if (allWords.length == 0) {
 
         if (uKey[uKey.length - 1] % 2 == 1) {
-            allWords = shuffle(spanish2);
+            allWords = shuffle(spanish4);
             allWords.push("...");
         }
         else {
-            allWords = shuffle(english2);
+            allWords = shuffle(english4);
             allWords.push("...");
         }
 
@@ -79,7 +79,7 @@ function writeToDB(currWord, selColor, randColor) {
     var d = new Date();
     var t = Math.round(Math.abs(d - s) / 1000);
     var time = "";
-    time = parseTime(Math.abs(t - buffer));
+    time = Math.abs(t - buffer);//parseTime(Math.abs(t - buffer));
     buffer = t;
     //alert(time);
 
@@ -90,7 +90,7 @@ function writeToDB(currWord, selColor, randColor) {
         fireBaseRef.child("Participants Data").child(uKey).child("WordTest 4").child(currWord.toUpperCase()).child("Displayed In").set(selColor);
         fireBaseRef.child("Participants Data").child(uKey).child("WordTest 4").child(currWord.toUpperCase()).child("Selected").set(randColor);
         fireBaseRef.child("Participants Data").child(uKey).child("WordTest 4").child(currWord.toUpperCase()).child("Status").set(status);
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 4").child(currWord.toUpperCase()).child("Time").set(time);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 4").child(currWord.toUpperCase()).child("Time").set(time + " ms");
     }
 
 }
@@ -134,7 +134,7 @@ function parseTime(t, idVal) {
         }
 
     }
-    document.getElementById("timer").innerHTML = x
+    //document.getElementById("timer").innerHTML = x
     return x;
 }
 

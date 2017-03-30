@@ -6,8 +6,8 @@ var Name = document.getElementById("fullName");
 
 var fireBaseRef = firebase.database().ref();
 
-var spanish2 = ["barril", "mesa", "sueño", "acuerdo", "recompensa", "suicidio", "dolor", "eyacular", "verga", "chocha", ];
-var english2 = ["barrel", "table", "dream", "agreement", "reward", "suicide", "pain", "ejaculate", "dick", "pussy"];
+var spanish3 = ["tela", "tiempo", "noticias", "vacación", "dicha", "tortura", "soledad", "matanza", "coger", "mierda", ];
+var english3 = ["fabric", "time", "noticias", "holiday", "bliss", "torture", "loneliness", "slaughter", "fuck", "shit"];
 
 var allWords = new Array();
 
@@ -38,11 +38,11 @@ function displayWord(sel) {
     if (allWords.length == 0) {
 
         if (uKey[uKey.length - 1] % 2 == 1) {
-            allWords = shuffle(spanish2);
+            allWords = shuffle(spanish3);
             allWords.push("...");
         }
         else {
-            allWords = shuffle(english2);
+            allWords = shuffle(english3);
             allWords.push("...");
         }
 
@@ -66,7 +66,7 @@ function displayWord(sel) {
     }
     else {
         //change this
-        window.location.href = 'continueTest.3.html';
+        window.location.href = 'continueTest.7.html';
     }
     index++;
 
@@ -87,10 +87,10 @@ function writeToDB(currWord, selColor, randColor) {
         if (selColor == randColor) {
             status = "CORRECT";
         }
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 2").child(currWord.toUpperCase()).child("Displayed In").set(selColor);
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 2").child(currWord.toUpperCase()).child("Selected").set(randColor);
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 2").child(currWord.toUpperCase()).child("Status").set(status);
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 2").child(currWord.toUpperCase()).child("Time").set(time + " ms");
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 6").child(currWord.toUpperCase()).child("Displayed In").set(selColor);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 6").child(currWord.toUpperCase()).child("Selected").set(randColor);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 6").child(currWord.toUpperCase()).child("Status").set(status);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 6").child(currWord.toUpperCase()).child("Time").set(time + " ms");
     }
 
 }
@@ -134,7 +134,7 @@ function parseTime(t, idVal) {
         }
 
     }
-   // document.getElementById("timer").innerHTML = x
+    //document.getElementById("timer").innerHTML = x
     return x;
 }
 

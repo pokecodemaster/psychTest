@@ -6,8 +6,8 @@ var Name = document.getElementById("fullName");
 
 var fireBaseRef = firebase.database().ref();
 
-var spanish2 = ["barril", "mesa", "sueño", "acuerdo", "recompensa", "suicidio", "dolor", "eyacular", "verga", "chocha", ];
-var english2 = ["barrel", "table", "dream", "agreement", "reward", "suicide", "pain", "ejaculate", "dick", "pussy"];
+var spanish2 = ["olla", "calle", "paz", "goce", "florecer", "violación", "molestia", "vómito", "escroto", "bastardo", ];
+var english2 = ["kettle", "street", "peace", "enjoyment", "blossom", "rape", "ache", "vomit", "scrotum", "bastard"];
 
 var allWords = new Array();
 
@@ -32,7 +32,7 @@ var buffer = 0;
 var uKey = document.cookie;
 //uKey = uKey.substring/*(0, uKey.length - 1)*/;
 
-//fireBaseRef.child(uKey).child("WordTest 2").set("");
+//fireBaseRef.child(uKey).child("WordTest 4").set("");
 function displayWord(sel) {
 
     if (allWords.length == 0) {
@@ -66,7 +66,7 @@ function displayWord(sel) {
     }
     else {
         //change this
-        window.location.href = 'continueTest.3.html';
+        window.location.href = 'continueTest.9.html';
     }
     index++;
 
@@ -87,10 +87,10 @@ function writeToDB(currWord, selColor, randColor) {
         if (selColor == randColor) {
             status = "CORRECT";
         }
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 2").child(currWord.toUpperCase()).child("Displayed In").set(selColor);
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 2").child(currWord.toUpperCase()).child("Selected").set(randColor);
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 2").child(currWord.toUpperCase()).child("Status").set(status);
-        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 2").child(currWord.toUpperCase()).child("Time").set(time + " ms");
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 8").child(currWord.toUpperCase()).child("Displayed In").set(selColor);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 8").child(currWord.toUpperCase()).child("Selected").set(randColor);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 8").child(currWord.toUpperCase()).child("Status").set(status);
+        fireBaseRef.child("Participants Data").child(uKey).child("WordTest 8").child(currWord.toUpperCase()).child("Time").set(time + " ms");
     }
 
 }
