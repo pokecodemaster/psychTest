@@ -72,7 +72,7 @@ function tableToJson5(idStr) {
 
     }
 
-    alert(concatVal + "\n\n");
+   // alert(concatVal + "\n\n");
 }
 
 function tableToJson3(idStr) {
@@ -100,7 +100,7 @@ function tableToJson3(idStr) {
 
     }
 
-    alert(concatVal + "\n\n");
+    //alert(concatVal + "\n\n");
 }
 
 function parseStr(strIn) {

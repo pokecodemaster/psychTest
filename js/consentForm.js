@@ -10,7 +10,9 @@ var KEY = d.getTime();
 
 function submitForm() {
 
-    document.cookie = KEY;
+    var keyStr = KEY.toString();
+
+    document.cookie = keyStr.replace("=", "");
 
 
     var Name = document.getElementById("name").value;
@@ -20,7 +22,7 @@ function submitForm() {
 
     window.location.href = 'participantDemographics.html';
 
-    alert("whaaaadup");
+    //alert("whaaaadup");
 }
 
 

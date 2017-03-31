@@ -7,7 +7,7 @@ var Name = document.getElementById("fullName");
 var fireBaseRef = firebase.database().ref();
 
 var spanish4 = ["habitante", "mermelada", "unidad", "afecto", "suave", "muerte", "pena", "pendejo", "mear", "pene", ];
-var english4 = ["inhabitant", "jelly", "unit", "affection", "soft", "death", "grief", "ashole", "piss", "penis"];
+var english4 = ["inhabitant", "jelly", "unit", "affection", "soft", "death", "grief", "asshole", "piss", "penis"];
 
 var allWords = new Array();
 

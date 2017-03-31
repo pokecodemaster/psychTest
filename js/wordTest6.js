@@ -7,7 +7,7 @@ var Name = document.getElementById("fullName");
 var fireBaseRef = firebase.database().ref();
 
 var spanish3 = ["tela", "tiempo", "noticias", "vacación", "dicha", "tortura", "soledad", "matanza", "coger", "mierda", ];
-var english3 = ["fabric", "time", "noticias", "holiday", "bliss", "torture", "loneliness", "slaughter", "fuck", "shit"];
+var english3 = ["fabric", "time", "news", "holiday", "bliss", "torture", "loneliness", "slaughter", "fuck", "shit"];
 
 var allWords = new Array();
 
