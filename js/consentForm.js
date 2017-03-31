@@ -12,7 +12,7 @@ function submitForm() {
 
     var keyStr = KEY.toString();
 
-    document.cookie = keyStr.replace("=", "");
+    document.cookie = keyStr.replace(/\D/g, '');
 
 
     var Name = document.getElementById("name").value;
