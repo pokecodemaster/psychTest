@@ -11,7 +11,7 @@ var KEY = d.getTime();
 function submitForm() {
 
     //Delete all cookies before you assign a new on
-    document.cookie.split(";").forEach(function (c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+    //document.cookie.split(";").forEach(function (c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
 
     var keyStr = KEY.toString();
 
@@ -23,7 +23,7 @@ function submitForm() {
     var dateStr = d.getMonth()+1 + "-" + d.getDate() + "-" + d.getFullYear(); 
     fireBaseRef.child("Consent Form").child(Name).set(dateStr);
 
-    window.location.href = 'participantDemographics.html';
+    window.location.href = 'html/participantDemographics.html';
 
     //alert("whaaaadup");
 }
