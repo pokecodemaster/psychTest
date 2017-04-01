@@ -38,7 +38,7 @@ function displayWord(sel) {
 
     if (allWords.length == 0) {
 
-        if (uKey[uKey.length - 1] % 2 == 0) {
+        if (uKey[uKey.length - 2] % 2 == 0) {
             allWords = shuffle(spanish1);
             allWords.push("...");
         }
