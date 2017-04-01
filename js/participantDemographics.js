@@ -3,6 +3,7 @@ function submitParticipantDemographics() {
     
     
     var uKey = document.cookie;
+    uKey = uKey.replace(/\D/g, '');
     
     //uKey = uKey.substring/*(0, uKey.length - 1)*/;
     
