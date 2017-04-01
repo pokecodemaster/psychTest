@@ -10,7 +10,7 @@ var KEY = d.getTime();
 
 function submitForm() {
 
-    //Delete all cookies before you assign a new one.
+    //Delete all cookies before you assign a new on
     deleteAllCookies();
 
     var keyStr = KEY.toString();
@@ -37,6 +37,7 @@ function deleteAllCookies() {
         var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
+}
 
 
 
