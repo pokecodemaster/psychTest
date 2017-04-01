@@ -30,7 +30,7 @@ var s = new Date();
 var buffer = 0;
 
 var uKey = document.cookie;
-uKey = uKey.toString().replace(/\D/g, '');
+//uKey = uKey.toString().replace(/\D/g, '');
 //uKey = uKey.substring/*(0, uKey.length - 1)*/;
 
 //fireBaseRef.child(uKey).child("WordTest 1").set("");
