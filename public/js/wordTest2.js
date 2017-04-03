@@ -6,8 +6,8 @@ var Name = document.getElementById("fullName");
 
 var fireBaseRef = firebase.database().ref();
 
-var spanish2 = ["barril", "mesa", "sueño", "acuerdo", "recompensa", "suicidio", "dolor", "eyacular", "verga", "chocha", ];
-var english2 = ["barrel", "table", "dream", "agreement", "reward", "suicide", "pain", "ejaculate", "dick", "pussy"];
+var spanish2 = ["barril", "mesa", "belleza", "acuerdo", "recompensa", "suicidio", "dolor", "eyacular", "verga", "chocha", ];
+var english2 = ["barrel", "table", "beauty", "agreement", "reward", "suicide", "pain", "ejaculate", "dick", "pussy"];
 
 var allWords = new Array();
 

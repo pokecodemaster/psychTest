@@ -6,7 +6,7 @@ var Name = document.getElementById("fullName");
 
 var fireBaseRef = firebase.database().ref();
 
-var spanish1 = ["olla", "calle", "paz", "goce", "florecer", "violación", "molestia", "vómito", "escroto", "bastardo", ];
+var spanish1 = ["olla", "calle", "paz", "goce", "florecer", "violacion", "molestia", "vomito", "escroto", "bastardo", ];
 var english1 = ["kettle", "street", "peace", "enjoyment", "blossom", "rape", "ache", "vomit", "scrotum", "bastard"];
 
 var allWords = new Array();
